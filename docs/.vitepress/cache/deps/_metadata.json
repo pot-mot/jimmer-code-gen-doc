@@ -1,40 +1,40 @@
 {
-  "hash": "ecb54243",
-  "configHash": "897e73ac",
-  "lockfileHash": "e12abd41",
-  "browserHash": "00905904",
+  "hash": "1ce62301",
+  "configHash": "9ab753e6",
+  "lockfileHash": "d438a7cc",
+  "browserHash": "d46b5fe8",
   "optimized": {
     "vue": {
-      "src": "../../../../node_modules/.pnpm/registry.npmmirror.com+vue@3.4.4/node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "src": "../../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "532d062f",
+      "fileHash": "ad4a609b",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
-      "src": "../../../../node_modules/.pnpm/registry.npmmirror.com+@vue+devtools-api@6.5.1/node_modules/@vue/devtools-api/lib/esm/index.js",
+      "src": "../../../../node_modules/@vue/devtools-api/lib/esm/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "13f29329",
+      "fileHash": "bd6cbff6",
       "needsInterop": false
     },
     "vitepress > @vueuse/core": {
-      "src": "../../../../node_modules/.pnpm/registry.npmmirror.com+@vueuse+core@10.7.1_vue@3.4.4/node_modules/@vueuse/core/index.mjs",
+      "src": "../../../../node_modules/@vueuse/core/index.mjs",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "d888847b",
+      "fileHash": "cf62549f",
       "needsInterop": false
     },
     "@theme/index": {
-      "src": "../../../../node_modules/.pnpm/registry.npmmirror.com+vitepress@1.0.0-rc.35_@algolia+client-search@4.22.0_search-insights@2.13.0/node_modules/vitepress/dist/client/theme-default/index.js",
+      "src": "../../../../node_modules/vitepress/dist/client/theme-default/index.js",
       "file": "@theme_index.js",
-      "fileHash": "9c01fdaa",
+      "fileHash": "973584e0",
       "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-FQPZKX5E": {
-      "file": "chunk-FQPZKX5E.js"
+    "chunk-IFEJEG33": {
+      "file": "chunk-IFEJEG33.js"
     },
-    "chunk-6E3N6EFA": {
-      "file": "chunk-6E3N6EFA.js"
+    "chunk-WRQD7P3K": {
+      "file": "chunk-WRQD7P3K.js"
     }
   }
 }
