@@ -5,6 +5,11 @@
 		"docs:serve": "vitepress serve docs"
 	},
 	"dependencies": {
+		"@types/markdown-it": "^13.0.7",
+		"@types/markdown-it-container": "^2.0.9",
+		"markdown-it": "^14.0.0",
+		"markdown-it-container": "^4.0.0",
+		"medium-zoom": "^1.1.0",
 		"vitepress": "^1.0.0-rc.35"
 	}
 }

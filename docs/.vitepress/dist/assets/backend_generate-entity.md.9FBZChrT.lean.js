@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a}from"./chunks/framework.s8P_zT9m.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"backend/generate-entity.md","filePath":"backend/generate-entity.md"}'),n={name:"backend/generate-entity.md"};function r(c,o,s,i,d,p){return a(),t("div")}const f=e(n,[["render",r]]);export{m as __pageData,f as default};

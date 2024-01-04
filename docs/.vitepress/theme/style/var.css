@@ -1,0 +1,9 @@
+:root {
+    /* 标题 */
+    --vp-home-hero-name-color: transparent;
+    --vp-home-hero-name-background: linear-gradient(135deg, #12bd15 10%, #2e8555 100%);
+
+    /* Brand 颜色 */
+    --vp-button-brand-bg: #12bd15;
+    --vp-button-brand-hover-bg: #2e8555;
+}
