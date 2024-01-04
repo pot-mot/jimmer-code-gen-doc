@@ -1,11 +1,13 @@
 import DefaultTheme from 'vitepress/theme'
 
+import { onMounted, watch, nextTick } from 'vue';
+import { useRoute } from 'vitepress';
+
 // https://juejin.cn/post/7133165263767207966
 import './style/var.css'
 
 import mediumZoom from 'medium-zoom';
-import { onMounted, watch, nextTick } from 'vue';
-import { useRoute } from 'vitepress';
+import './style/mediumZoom.css'
 
 export default {
     extends: DefaultTheme,
