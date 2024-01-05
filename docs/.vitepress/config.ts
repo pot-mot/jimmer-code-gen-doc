@@ -3,7 +3,7 @@ export default {
     description: '旨在快捷创建 Jimmer 下实体与关联',
     base: '/jimmer-code-gen-doc/',
     head: [
-        ['link', {rel: 'icon', href: '/jimmer-code-gen-doc/images/logo.png'}]
+        ['link', {rel: 'icon', href: '/logo.svg'}]
     ],
 
     markdown: {

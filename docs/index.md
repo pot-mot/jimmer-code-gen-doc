@@ -6,8 +6,8 @@ hero:
   text: 可视化的实体关联模型创建工具
   tagline: 旨在快捷创建 Jimmer 下实体与关联
   image:
-    src: /images/logo.svg
-    alt: VitePress
+    src: /logo.svg
+    alt: Jimmer
   actions:
     - theme: brand
       text: Get Started
