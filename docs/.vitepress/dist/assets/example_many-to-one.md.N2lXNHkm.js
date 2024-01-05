@@ -1,1 +1,0 @@
-import{_ as e,c as t,o as a}from"./chunks/framework.s8P_zT9m.js";const i=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"example/many-to-one.md","filePath":"example/many-to-one.md"}'),o={name:"example/many-to-one.md"};function n(r,m,s,c,p,_){return a(),t("div")}const l=e(o,[["render",n]]);export{i as __pageData,l as default};

@@ -1,1 +1,0 @@
-import{_ as t,c as e,o}from"./chunks/framework.s8P_zT9m.js";const _=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"frontend/tool-bar.md","filePath":"frontend/tool-bar.md"}'),r={name:"frontend/tool-bar.md"};function a(n,s,c,d,f,l){return o(),e("div")}const i=t(r,[["render",a]]);export{_ as __pageData,i as default};

@@ -1,1 +1,0 @@
-import{_ as e,c as t,o as r}from"./chunks/framework.s8P_zT9m.js";const i=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"frontend/graph.md","filePath":"frontend/graph.md"}'),a={name:"frontend/graph.md"};function n(o,s,c,p,d,f){return r(),t("div")}const m=e(a,[["render",n]]);export{i as __pageData,m as default};

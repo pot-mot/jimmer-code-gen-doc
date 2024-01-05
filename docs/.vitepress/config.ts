@@ -1,23 +1,35 @@
-
 export default {
     title: 'Jimmer Code Gen',
     description: '旨在快捷创建 Jimmer 下实体与关联',
     base: '/jimmer-code-gen-doc/',
-    head:[
-        ['link', { rel: 'icon', href: '/jimmer-code-gen-doc/images/logo.png' }]
+    head: [
+        ['link', {rel: 'icon', href: '/jimmer-code-gen-doc/images/logo.png'}]
     ],
 
     markdown: {
         lineNumbers: true,
     },
 
+    lastUpdated: true,
+
     themeConfig: {
-        logo: '/images/logo.svg',
-        siteTitle: 'Jimmer Code Gen',
+        logo: '/logo.svg',
+
+        lastUpdatedText: 'Last edit time',
+
+        outline: [2, 4],
+
+        outlineTitle: 'Outline',
+
+        docFooter: {prev: 'prev', next: 'next'},
 
         socialLinks: [
-            { icon: 'github', link: 'https://github.com/babyfish-ct/jimmer' },
+            {icon: 'github', link: 'https://github.com/pot-mot/jimmer-code-gen-kotlin'},
         ],
+
+        editLink: {
+            pattern: 'https://github.com/pot-mot/jimmer-code-gen-doc/tree/main/docs/:path'
+        },
 
         sidebar: [
             {
