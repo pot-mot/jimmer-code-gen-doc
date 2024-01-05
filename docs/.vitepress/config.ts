@@ -44,16 +44,16 @@ export default {
                 text: '生成演示',
                 items: [
                     {
-                        text: '多对一',
-                        link: '/frontend/many-to-one.html'
+                        text: '一对多 / 多对一',
+                        link: '/example/many-to-one.html'
                     },
                     {
                         text: '一对一',
-                        link: '/frontend/one-to-one.html'
+                        link: '/example/one-to-one.html'
                     },
                     {
                         text: '多对多',
-                        link: '/frontend/many-to-many.html'
+                        link: '/example/many-to-many.html'
                     }
                 ]
             },
