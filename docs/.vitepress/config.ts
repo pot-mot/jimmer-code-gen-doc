@@ -59,6 +59,7 @@ export default {
             },
             {
                 text: '前端',
+                link: '/frontend/index.html',
                 items: [
                     {
                         text: '图交互',
@@ -68,6 +69,7 @@ export default {
             },
             {
                 text: '后端',
+                link: '/backend/index.html',
                 items: [
                     {
                         text: 'TableDefine 生成',
@@ -78,7 +80,7 @@ export default {
                         link: '/backend/generate-entity.html'
                     },
                     {
-                        text: '其他数据源支持',
+                        text: '支持其他数据源',
                         link: '/backend/other-datasource.html'
                     },
                 ]
