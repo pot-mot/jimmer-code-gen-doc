@@ -431,7 +431,7 @@ ALTER TABLE `order_detail` ADD CONSTRAINT `fk_detail_to_order`
         "id": "91ed97fc-b3a6-40c1-99dd-2782f4830099",
         "data": {
           "table": {
-            "name": "student",
+            "name": "edu_student",
             "comment": "学生",
             "remark": "",
             "orderKey": 0,
@@ -505,7 +505,7 @@ ALTER TABLE `order_detail` ADD CONSTRAINT `fk_detail_to_order`
             "indexes": []
           }
         },
-        "zIndex": 10,
+        "zIndex": 24,
         "ports": {
           "groups": {
             "COLUMN_PORT_GROUP": {
@@ -529,7 +529,7 @@ ALTER TABLE `order_detail` ADD CONSTRAINT `fk_detail_to_order`
           "items": [
             {
               "group": "COLUMN_PORT_GROUP",
-              "id": "4259e483-84bd-4dcf-8391-87f949b7cc45",
+              "id": "d01ada82-ed4b-4ce0-b740-9614d281bcce",
               "attrs": {
                 "COLUMN_PORT_SELECTOR": {
                   "width": 255
@@ -538,7 +538,7 @@ ALTER TABLE `order_detail` ADD CONSTRAINT `fk_detail_to_order`
             },
             {
               "group": "COLUMN_PORT_GROUP",
-              "id": "34bd73e0-a2c4-4522-945e-bb79493462db",
+              "id": "620870e7-ea4f-435f-ac22-e03d4371a83c",
               "attrs": {
                 "COLUMN_PORT_SELECTOR": {
                   "width": 255
@@ -547,7 +547,7 @@ ALTER TABLE `order_detail` ADD CONSTRAINT `fk_detail_to_order`
             },
             {
               "group": "COLUMN_PORT_GROUP",
-              "id": "d9412adc-04b7-4e28-92c7-9a0c9bd51967",
+              "id": "60cf11ba-0262-4d63-a572-b321381b4454",
               "attrs": {
                 "COLUMN_PORT_SELECTOR": {
                   "width": 255
@@ -556,7 +556,7 @@ ALTER TABLE `order_detail` ADD CONSTRAINT `fk_detail_to_order`
             },
             {
               "group": "COLUMN_PORT_GROUP",
-              "id": "cf4f295b-2857-4cd7-9629-59ba6b7b06c3",
+              "id": "ea9a90b2-34f9-4854-9e75-3c4bb60a317a",
               "attrs": {
                 "COLUMN_PORT_SELECTOR": {
                   "width": 255
@@ -580,7 +580,7 @@ ALTER TABLE `order_detail` ADD CONSTRAINT `fk_detail_to_order`
         "id": "fab38c0d-a7f0-4e00-81e5-a229ae66735f",
         "data": {
           "table": {
-            "name": "class",
+            "name": "edu_class",
             "comment": "班级",
             "remark": "",
             "orderKey": 0,
@@ -638,7 +638,7 @@ ALTER TABLE `order_detail` ADD CONSTRAINT `fk_detail_to_order`
             "indexes": []
           }
         },
-        "zIndex": 12,
+        "zIndex": 26,
         "ports": {
           "groups": {
             "COLUMN_PORT_GROUP": {
@@ -662,7 +662,7 @@ ALTER TABLE `order_detail` ADD CONSTRAINT `fk_detail_to_order`
           "items": [
             {
               "group": "COLUMN_PORT_GROUP",
-              "id": "264ff059-f696-426b-9956-119c845ad252",
+              "id": "6e4022e9-90aa-455c-b221-0fcc65a7bbbb",
               "attrs": {
                 "COLUMN_PORT_SELECTOR": {
                   "width": 241
@@ -671,7 +671,7 @@ ALTER TABLE `order_detail` ADD CONSTRAINT `fk_detail_to_order`
             },
             {
               "group": "COLUMN_PORT_GROUP",
-              "id": "4481e668-749d-4dd5-af80-d7180864d018",
+              "id": "19ce8120-43d4-4e3d-ba2e-6a96015791df",
               "attrs": {
                 "COLUMN_PORT_SELECTOR": {
                   "width": 241
@@ -680,7 +680,7 @@ ALTER TABLE `order_detail` ADD CONSTRAINT `fk_detail_to_order`
             },
             {
               "group": "COLUMN_PORT_GROUP",
-              "id": "1acfbfdc-0947-41c9-987b-694afdd2f6c2",
+              "id": "130897a5-ef2f-491e-873b-c0726d199b10",
               "attrs": {
                 "COLUMN_PORT_SELECTOR": {
                   "width": 241
@@ -698,12 +698,47 @@ ALTER TABLE `order_detail` ADD CONSTRAINT `fk_detail_to_order`
             "direction": "H"
           }
         },
-        "id": "4771886e-f2e9-4307-834e-addb4adcd31b",
+        "id": "b728b01d-5615-434f-b309-da31f7e0d49c",
+        "data": {
+          "association": {
+            "associationType": "ONE_TO_MANY",
+            "fake": false,
+            "name": "fk_student_to_class",
+            "sourceTable": {
+              "name": "edu_class",
+              "comment": "班级"
+            },
+            "targetTable": {
+              "name": "edu_student",
+              "comment": "学生"
+            },
+            "columnReferences": [
+              {
+                "sourceColumn": {
+                  "name": "id",
+                  "comment": "ID",
+                  "type": "BIGINT",
+                  "typeCode": -5
+                },
+                "targetColumn": {
+                  "name": "class_id",
+                  "comment": "班级",
+                  "type": "BIGINT",
+                  "typeCode": -5
+                }
+              }
+            ]
+          }
+        },
         "source": {
           "cell": "fab38c0d-a7f0-4e00-81e5-a229ae66735f",
-          "port": "264ff059-f696-426b-9956-119c845ad252"
+          "port": "6e4022e9-90aa-455c-b221-0fcc65a7bbbb"
         },
-        "zIndex": 13,
+        "target": {
+          "cell": "91ed97fc-b3a6-40c1-99dd-2782f4830099",
+          "port": "ea9a90b2-34f9-4854-9e75-3c4bb60a317a"
+        },
+        "zIndex": 27,
         "labels": [
           {
             "markup": [
@@ -728,47 +763,12 @@ ALTER TABLE `order_detail` ADD CONSTRAINT `fk_detail_to_order`
               }
             }
           }
-        ],
-        "data": {
-          "association": {
-            "associationType": "ONE_TO_MANY",
-            "fake": false,
-            "name": "fk_class_to_student",
-            "sourceTable": {
-              "name": "class",
-              "comment": "班级"
-            },
-            "targetTable": {
-              "name": "student",
-              "comment": "学生"
-            },
-            "columnReferences": [
-              {
-                "sourceColumn": {
-                  "name": "id",
-                  "comment": "ID",
-                  "type": "BIGINT",
-                  "typeCode": -5
-                },
-                "targetColumn": {
-                  "name": "class_id",
-                  "comment": "班级",
-                  "type": "BIGINT",
-                  "typeCode": -5
-                }
-              }
-            ]
-          }
-        },
-        "target": {
-          "cell": "91ed97fc-b3a6-40c1-99dd-2782f4830099",
-          "port": "cf4f295b-2857-4cd7-9629-59ba6b7b06c3"
-        }
+        ]
       }
     ]
   },
   "zoom": 1.05,
-  "transform": "matrix(1.05,0,0,1.05,-42.81369800328844,-16.9742377532894)"
+  "transform": "matrix(1.05,0,0,1.05,-42.813726916255405,-16.9742578540193)"
 }
 ```
 </details>
@@ -776,9 +776,9 @@ ALTER TABLE `order_detail` ADD CONSTRAINT `fk_detail_to_order`
 此时关联类型为一对多，但是本质还是多对一映射，因此生成的外键为 student 指向 class：
 
 ```sql
-ALTER TABLE `student` ADD CONSTRAINT `fk_class_to_student` 
+ALTER TABLE `edu_student` ADD CONSTRAINT `fk_student_to_class` 
     FOREIGN KEY (`class_id`)
-  REFERENCES `class` (`id`)
+  REFERENCES `edu_class` (`id`)
   ON DELETE CASCADE ON UPDATE RESTRICT;
 ```
 
@@ -788,8 +788,8 @@ ALTER TABLE `student` ADD CONSTRAINT `fk_class_to_student`
 /**
  * 学生
  */
-@OneToMany(mappedBy = "class")
-val students: List<Student>
+@OneToMany(mappedBy = "eduClass")
+val eduStudents: List<EduStudent>
 ```
 ```kotlin
 /**
@@ -800,7 +800,7 @@ val students: List<Student>
     name = "id",
     referencedColumnName = "class_id"
 )
-val class: Class
+val eduClass: EduClass
 ```
 
 
