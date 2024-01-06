@@ -79,3 +79,10 @@ Builder 内塞了各种字符串化方法，在这个基础上进行扩展会相
 - TypeMapping（转换实体时，特定数据源类型下特定 jdbc type 翻译为特定属性的映射配置）
 
 这三者去一同完成了。
+
+## 名称长度
+
+数据源对标识符往往带有长度约束，为了避免超出长度限制，项目内设有 [IdentifierFilter.kt](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/kotlin/top/potmot/utils/identifier/IdentifierFilter.kt) 这一长度限制器，将过长的名称的后缀转换成 Hash 值。
+
+> Postgres 和 MySQL 长度限制均默认为 63，所以一般无需担心。
+

@@ -18,6 +18,18 @@ git clone https://gitee.com/run-around---whats-wrong/jimmer-code-gen-vue3
 git clone https://gitee.com/run-around---whats-wrong/jimmer-code-gen-kotlin
 ```
 
+## 直接基于 jar 启动
+
+[jar 包位置](https://github.com/pot-mot/jimmer-code-gen-kotlin/tree/multi_columns_ref/jar)
+
+如果当前环境没有安装 gradle 又想快速体验本项目，可以选择直接从 jar 包启动本项目。
+
+此时直接前往 jar 目录下使用  `java -jar <JAR>` 命令即可启动项目，且默认以 h2 启动所以不需要处理任何数据源。命令行启动成功后就可以从浏览器访问 `localhost:8080` 直接使用了。
+
+jar 包启动下前端 history 模式的路由无法保持，所以如果刷新会变为向后端发出请求，此时需要重新从根路由 `localhost:8080` 进入。
+
+以 jar 包启动请移步至 [模型创建](#模型创建) 继续，以下为开发启动步骤。
+
 ## 依赖下载
 
 进入前端项目根目录，运行 `pnpm install` 下载依赖。
@@ -105,9 +117,11 @@ CREATE SCHEMA jimmer_code_gen;
 
 ### 端口配置
 
-后端端口可以通过配置 `application.yml` 中的 `server.port` 从 8080 进行修改。
+后端端口通过配置 [application.yml](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/resources/application.yml) 中的 `server.port` 进行修改，默认为 8080。
 
-前端端口可以通过配置 `vite.config.ts` 中的 `server.port` 从 4000 进行修改。
+前端端口通过配置 [vite.config.ts](https://github.com/pot-mot/jimmer-code-gen-vue3/blob/multi_column_ref/vite.config.ts) 中的 `server.port` 进行修改，默认为 4000。
+
+若变更后端接口且需要打包，就需要同步变更前端项目 [api](https://github.com/pot-mot/jimmer-code-gen-vue3/blob/multi_column_ref/src/api/index.ts) 中的 BASE_URL。
 
 ## 模型创建
 
@@ -128,7 +142,7 @@ CREATE SCHEMA jimmer_code_gen;
 
 ![create-table.png](/images/quick-start/create-table.png)
 
-双击存在的表节点的任意位置或者点击左侧 Node 栏的编辑按钮就可再次进行编辑。
+双击存在的表节点的任意位置或者点击左侧 Node 栏的编辑按钮就可进行修改。
 
 ### 列编辑
 

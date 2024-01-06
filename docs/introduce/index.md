@@ -1,8 +1,18 @@
 <h1 style="font-size: 50px; padding-bottom: 20px;">Jimmer Code Gen</h1>
 
-一款模型设计与代码生成器，旨在快捷创建 [Jimmer](https://github.com/babyfish-ct/jimmer) 下的实体与关联。
+一款模型设计与代码生成工具，旨在快捷创建 [Jimmer](https://github.com/babyfish-ct/jimmer) 下的实体与关联。
 
-实现了可视化的设计数据库关联模型并转化成 jimmer 实体。
+实现了可视化的设计数据库关联模型并转化成 jimmer 实体，但不预设任何使用场景，鼓励使用本项目进行二次开发来快速产出不同的业务场景。
+
+## 项目地址
+
+### 前端
+- [Github 前端](https://github.com/pot-mot/jimmer-code-gen-vue3)
+- [Gitee 前端](https://gitee.com/run-around---whats-wrong/jimmer-code-gen-vue3)
+
+### 后端
+- [Github 后端](https://github.com/pot-mot/jimmer-code-gen-kotlin)
+- [Gitee 后端](https://gitee.com/run-around---whats-wrong/jimmer-code-gen-kotlin)
 
 ## 功能预览
 
