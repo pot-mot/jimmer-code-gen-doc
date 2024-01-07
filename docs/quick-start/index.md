@@ -1,6 +1,18 @@
 # 快速开始
 
-## 项目克隆
+## 直接基于 jar 启动
+
+如果想快速体验本项目，可以选择直接通过 [jar 包](https://github.com/pot-mot/jimmer-code-gen-kotlin/tree/multi_columns_ref/jar) 启动本项目。
+
+此时直接前往 jar 目录下使用  `java -jar <JAR>` 命令即可启动项目，之后可从浏览器访问 `localhost:8080` 。
+
+jar 默认以 h2 启动，所以不需要配置任何数据源，如有需要请自行配置 [数据源](#数据源配置)。
+
+> jar 包启动时前端 history 模式路由当页面刷新时无法保持，此时需要重新回到根路由。
+
+使用 jar 请直接跳转至 [模型创建](#模型创建) 继续。
+
+## 使用项目源码
 
 克隆项目至本地：
 
@@ -17,18 +29,6 @@ git clone https://gitee.com/run-around---whats-wrong/jimmer-code-gen-vue3
 
 git clone https://gitee.com/run-around---whats-wrong/jimmer-code-gen-kotlin
 ```
-
-## 直接基于 jar 启动
-
-[jar 包位置](https://github.com/pot-mot/jimmer-code-gen-kotlin/tree/multi_columns_ref/jar)
-
-如果当前环境没有安装 gradle 又想快速体验本项目，可以选择直接从 jar 包启动本项目。
-
-此时直接前往 jar 目录下使用  `java -jar <JAR>` 命令即可启动项目，且默认以 h2 启动所以不需要处理任何数据源。命令行启动成功后就可以从浏览器访问 `localhost:8080` 直接使用了。
-
-jar 包启动下前端 history 模式的路由无法保持，所以如果刷新会变为向后端发出请求，此时需要重新从根路由 `localhost:8080` 进入。
-
-以 jar 包启动请移步至 [模型创建](#模型创建) 继续，以下为开发启动步骤。
 
 ## 依赖下载
 

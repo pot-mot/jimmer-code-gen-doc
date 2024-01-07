@@ -10,7 +10,7 @@
 
 [useHistory.ts](https://github.com/pot-mot/jimmer-code-gen-vue3/blob/multi_column_ref/src/components/business/graphEditor/history/useHistory.ts)
 
-快捷键是 【Ctrl + z】（撤回）、【Ctrl + Shift + Z】（重做）。
+快捷键是 【ctrl+z】（撤回）、【ctrl+shift+z】（重做）。
 
 因为项目内外部影响数据的行为较多，历史记录不可忽略太多信息，因此项目内基本采用 history batch 相关操作把大量变更压缩进一次行为。
 
@@ -18,7 +18,7 @@
 
 [clipBoard.ts](https://github.com/pot-mot/jimmer-code-gen-vue3/blob/multi_column_ref/src/components/business/modelGraphEditor/clipBoard.ts)
 
-快捷键自然是熟悉的 【Ctrl + c】（复制）、【Ctrl + v】（粘贴）、【Ctrl + x】（剪切）。
+快捷键自然是熟悉的 【ctrl+c】（复制）、【ctrl+v】（粘贴）、【ctrl+x】（剪切）。
 
 目前模型设计器支持粘贴两种数据:
 
@@ -39,19 +39,11 @@
 
 前者同时也是复制黏贴表与关联时获取到的数据格式，后者则是 GraphData.json 的标准类型声明。
 
-:::warning
-如果在其他会话框中执行复制黏贴却意外触发了模型设计器里的复制黏贴操作，原因应该是鼠标不小心移动到画布上了。
-
-目前这不可避免但也没有较好解决办法，因为 graph.container 本身是没法触发 keyboard 的，这些事件只能委托到 documentElement 上进行。因此判断只能用 mouseenter、mouseleave 去维护状态。
-
-如果有好的办法，欢迎 PR。
-:::
-
 ## 多选、框选与移动
 
 [useSelection.ts](https://github.com/pot-mot/jimmer-code-gen-vue3/blob/multi_column_ref/src/components/business/graphEditor/selection/useSelection.ts)
 
-可以使用左键进行批量框选，快捷键是 【Ctrl + a】（全选）、【Ctrl + Delete】（删除）、方向键移动。
+可以使用左键进行批量框选，快捷键是 【ctrl+a】（全选）、【delete/backspace】（删除）、【delete/backspace + shift】（删除关联）、【up\down\left\right ( + ctrl)】方向键移动。
 
 :::warning
 目前框选是基于 AntV/X6 Selection 实现的，边的框选判断标准是基于矩形，所以存在误选的可能，此处需要留心。
@@ -68,11 +60,11 @@
 :::warning
 ### 导入时的延迟
 
-[ModelEditorStore.ts](https://github.com/pot-mot/jimmer-code-gen-vue3/blob/multi_column_ref/src/components/pages/ModelEditor/store/ModelEditorStore.ts)，
+[importTableIntoGraph](https://github.com/pot-mot/jimmer-code-gen-vue3/blob/multi_column_ref/src/components/pages/ModelEditor/store/ModelEditorStore.ts#L159)
 
 目前在导入超过一张表时都会触发 layoutAndFit 这个操作，但节点与关联创建会消耗无法预估的时间。
 
-以下是目前的实现，是固定设置了 200 ms 的延迟，仅是目前的一种妥协，未来将寻求更好的解决办法。
+以下是目前的实现，是设置了基于表数量的延迟，仅是目前的一种妥协，未来将寻求更好的解决办法。
 
 同上，如果有好的办法，欢迎 PR。
 
@@ -82,8 +74,6 @@ const importTableIntoGraph = async (tables: GenTableColumnsView[]) => {
 
     const {nodes, edges} = await loadByTableViews(graph, tables)
 
-    await nextTick()
-
     setTimeout(() => {
         if (nodes.length == 1) {
             commonOperations.focus(nodes[0])
@@ -91,7 +81,7 @@ const importTableIntoGraph = async (tables: GenTableColumnsView[]) => {
             graph.resetSelection([...nodes, ...edges])
             commonOperations.layoutAndFit()
         }
-    }, 200)
+    }, 100 + nodes.length * 40)
 }
 ```
 :::
