@@ -2,15 +2,15 @@
 
 ## 直接基于 jar 启动
 
-如果想快速体验本项目，可以选择直接通过 [jar 包](https://github.com/pot-mot/jimmer-code-gen-kotlin/tree/multi_columns_ref/jar) 启动本项目。
+如果想快速体验本项目，可以选择直接通过 [发行版](https://github.com/pot-mot/jimmer-code-gen-kotlin/releases) 中的 jar 包直接启动本项目。
 
-此时直接前往 jar 目录下使用  `java -jar <JAR>` 命令即可启动项目，之后可从浏览器访问 `localhost:8080` 。
+此时直接使用  `java -jar <JAR>` 命令即可启动项目，之后从浏览器访问 `localhost:8080` 即可。
 
 jar 默认以 h2 启动，所以不需要配置任何数据源，如有需要请自行配置 [数据源](#数据源配置)。
 
 > jar 包启动时前端 history 模式路由当页面刷新时无法保持，此时需要重新回到根路由。
 
-使用 jar 请直接跳转至 [模型创建](#模型创建) 继续。
+如不考虑了解源码启动，请直接跳转至 [模型创建](#模型创建) 继续。
 
 ## 使用项目源码
 
