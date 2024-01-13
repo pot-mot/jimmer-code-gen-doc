@@ -79,6 +79,7 @@
                         "indexes": []
                     }
                 },
+                "zIndex": 19,
                 "ports": {
                     "groups": {
                         "COLUMN_PORT_GROUP": {
@@ -119,8 +120,7 @@
                             }
                         }
                     ]
-                },
-                "zIndex": 15
+                }
             },
             {
                 "position": {
@@ -178,6 +178,7 @@
                         "indexes": []
                     }
                 },
+                "zIndex": 21,
                 "ports": {
                     "groups": {
                         "COLUMN_PORT_GROUP": {
@@ -218,8 +219,7 @@
                             }
                         }
                     ]
-                },
-                "zIndex": 17
+                }
             },
             {
                 "shape": "ASSOCIATION_EDGE",
@@ -230,11 +230,7 @@
                     }
                 },
                 "id": "c9fbe5b6-eccc-4692-acb2-38b8d11fc954",
-                "source": {
-                    "cell": "619dca2a-560a-4185-9db2-d3619a042bd8",
-                    "port": "8be08c3e-3f6e-4ba2-832b-0f220ae69f4d"
-                },
-                "zIndex": 18,
+                "zIndex": 22,
                 "labels": [
                     {
                         "markup": [
@@ -291,6 +287,10 @@
                         ]
                     }
                 },
+                "source": {
+                    "cell": "619dca2a-560a-4185-9db2-d3619a042bd8",
+                    "port": "8be08c3e-3f6e-4ba2-832b-0f220ae69f4d"
+                },
                 "target": {
                     "cell": "0af93104-4d36-4aab-9902-2625734c4056",
                     "port": "788a5f29-c96c-4a78-abea-08d79110ac16"
@@ -299,7 +299,7 @@
         ]
     },
     "zoom": 1,
-    "transform": null
+    "transform": "matrix(1,0,0,1,-114,-17)"
 }
 ```
 </details>
@@ -308,26 +308,24 @@
 此时将自然生产一张中间表与两个外键约束。
 
 ```sql
-CREATE TABLE `factory_product_mapping` (
-    factory_id BIGINT NOT NULL,
-    product_id BIGINT NOT NULL
+CREATE TABLE `fk_factory_id_product_id` (
+    `factory_id` BIGINT(0) NOT NULL,
+    `product_id` BIGINT(0) NOT NULL
 )
   ENGINE = InnoDB
   CHARACTER SET = utf8mb4
   COMMENT = '工厂与产品的映射关系表'
   ROW_FORMAT = Dynamic;
 
-ALTER TABLE `factory_product_mapping` ADD CONSTRAINT `pk_factory_product_mapping` PRIMARY KEY (`factory_id`,`product_id`);
+ALTER TABLE `fk_factory_id_product_id` ADD CONSTRAINT `pk_fk_factory_id_product_id` PRIMARY KEY (`factory_id`,`product_id`);
 
-ALTER TABLE `factory_product_mapping` ADD CONSTRAINT `fk_factory_id_product_id_SOURCE` 
+ALTER TABLE `fk_factory_id_product_id` ADD CONSTRAINT `fk_factory_id_product_id_s` 
     FOREIGN KEY (`factory_id`)
-  REFERENCES `factory` (`id`)
-  ON DELETE CASCADE ON UPDATE RESTRICT;
+  REFERENCES `factory` (`id`);
 
-ALTER TABLE `factory_product_mapping` ADD CONSTRAINT `fk_factory_id_product_id_TARGET` 
+ALTER TABLE `fk_factory_id_product_id` ADD CONSTRAINT `fk_factory_id_product_id_t` 
     FOREIGN KEY (`product_id`)
-  REFERENCES `product` (`id`)
-  ON DELETE CASCADE ON UPDATE RESTRICT;
+  REFERENCES `product` (`id`);
 ```
 
 而在属性层面自然就是一对 @ManyToMany，即对称的两组 List。

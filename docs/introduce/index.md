@@ -2,7 +2,26 @@
 
 一款模型设计与代码生成工具，旨在快捷创建 [Jimmer](https://github.com/babyfish-ct/jimmer) 下的实体与关联。
 
-实现了可视化的设计数据库关联模型并转化成 jimmer 实体，但不预设任何使用场景，鼓励使用本项目进行二次开发来快速产出不同的业务场景。
+实现了：
+- 可视化的设计数据库关联模型
+- 转化关联模型为 jimmer 实体
+
+本项目不预设任何使用环境，因此如需要结合真实项目调整实体类、生成业务类和 UI，欢迎 fork 本项目进行二次开发。
+
+## 功能预览
+
+### 模型设计
+![model-edit](/images/project-preview/model-edit.png)
+
+### 表设计
+![table-edit.png](/images/project-preview/table-edit.png)
+
+
+### 枚举编辑
+![enum-edit.png](/images/project-preview/enum-edit.png)
+
+### 预览下载
+![code-preview.png](/images/project-preview/code-preview.png)
 
 ## 项目地址
 
@@ -13,24 +32,6 @@
 ### 后端
 - [Github 后端](https://github.com/pot-mot/jimmer-code-gen-kotlin)
 - [Gitee 后端](https://gitee.com/run-around---whats-wrong/jimmer-code-gen-kotlin)
-
-## 功能预览
-
-### 模型设计
-![model-edit](/images/project-preview/model-edit.png)
-
-### 模型配置
-![model-config.png](/images/project-preview/model-config.png)
-
-### 表设计
-![table-edit.png](/images/project-preview/table-edit.png)
-
-### 枚举编辑
-![enum-edit.png](/images/project-preview/enum-edit.png)
-
-### 代码预览
-![code-preview.png](/images/project-preview/code-preview.png)
-
 
 ## 依赖说明
 

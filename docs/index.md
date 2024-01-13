@@ -11,8 +11,11 @@ hero:
   actions:
     - theme: brand
       text: Get Started
-      link: /quick-start/index
+      link: /introduce/index.html
     - theme: alt
-      text: View Jimmer on GitHub
+      text: View on GitHub
+      link: https://github.com/pot-mot/jimmer-code-gen-kotlin
+    - theme: alt
+      text: View Jimmer
       link: https://github.com/babyfish-ct/jimmer
 ---

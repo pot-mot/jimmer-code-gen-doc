@@ -1,127 +1,17 @@
 # 快速开始
 
+> 项目结构本身并不复杂，直接基于[源码启动](/source-start/index.html)可以更自由的调整生成功能、更及时的排查问题。
+> 作为项目开发者我更建议直接进行二次开发而不是单纯使用 jar 启动作为小工具。
+
 ## 直接基于 jar 启动
 
-如果想快速体验本项目，可以选择直接通过 [发行版](https://github.com/pot-mot/jimmer-code-gen-kotlin/releases) 中的 jar 包直接启动本项目。
+快速体验本项目可以直接通过 [发行版](https://github.com/pot-mot/jimmer-code-gen-kotlin/releases) 的 jar 包直接启动本项目。
 
-此时直接使用  `java -jar <JAR>` 命令即可启动项目，之后从浏览器访问 `localhost:8080` 即可。
+此时直接使用  `java -jar <JAR>` 即可启动项目，之后从浏览器访问 `localhost:8080` 即可。
 
-jar 默认以 h2 启动，所以不需要配置任何数据源，如有需要请自行配置 [数据源](#数据源配置)。
+jar 默认以 h2 启动，所以不需要配置任何数据源，如有需要请自行通过命令行参数配置 [数据源](/source-start/index.html#数据源配置)。
 
-> jar 包启动时前端 history 模式路由当页面刷新时无法保持，此时需要重新回到根路由。
-
-如不考虑了解源码启动，请直接跳转至 [模型创建](#模型创建) 继续。
-
-## 使用项目源码
-
-克隆项目至本地：
-
-- github
-```
-git clone https://github.com/pot-mot/jimmer-code-gen-vue3
-
-git clone https://github.com/pot-mot/jimmer-code-gen-kotlin
-```
-
-- gitee
-```
-git clone https://gitee.com/run-around---whats-wrong/jimmer-code-gen-vue3
-
-git clone https://gitee.com/run-around---whats-wrong/jimmer-code-gen-kotlin
-```
-
-## 依赖下载
-
-进入前端项目根目录，运行 `pnpm install` 下载依赖。
-
-> 项目的开发环境中 pnpm 版本为 8.8.0，node 版本为 20.8.0，可能相对较新，可以通过 nvm 进行 node 版本管理。
-
-
-使用 idea 打开后端项目，进入根目录下的 `build.gradle.kts`，刷新 gradle 依赖。
-
-> gradle 项目初次导入时 idea 将下载全新 gradle 和对应依赖，所以建议开启 build.gradle.kts 中的maven源镜像注释或自行配置其他镜像源。
->
-> 这一步需要较长时间，请务必耐心等待。
-
-```kts
-repositories {
-    maven { setUrl("https://maven.aliyun.com/repository/public/") }
-    maven { setUrl("https://maven.aliyun.com/repository/spring/") }
-}
-```
-
-## 数据源配置
-
-目前后端项目支持的数据源有 [H2](https://h2database.com/html/main.html)、[MySQL](https://www.mysql.com/)、[PostgreSQL](https://www.postgresql.org/)，
-可根据实际需要选择对应的数据源。
-
-后端项目 resources 下有对应数据源的 sql 脚本和 profile，切换 `application.yml` 下的 `spring.profiles.active` 为对应 profile，并按照下方详细要求进行配置即可。
-
-**因为本项目配置默认采用小写命名，所以请尽可能不要改变 sql 脚本的大小写**。
-
-### H2
-
-```yaml
-spring:
-  datasource:
-    driver-class-name: org.h2.Driver
-    url: jdbc:h2:mem:jimmer_code_gen
-    username: root
-    password: root
-
-  h2:
-    console:
-      enabled: true
-      path: /h2
-```
-
-默认以内存形式启动。此时后端项目可不进行任何配置就直接启动，**但不会持久化任何数据**。如需要持久化，可以将 url 配置为基于文件：`jdbc:h2:file:<FILE_PATH>`。
-
-可以通过 host:port/h2（默认情况下是 localhost:8080/h2 ）访问 h2 web console，基于配置 datasource.url username password（默认情况下是 root，root）进行连接。
-
-项目启动时将自动检测 url 是否以 `jdbc:h2` 开始，如果是，就将自动执行 `resources/sql/h2/jimmer_code_gen.sql`。 
-
-### MySQL
-
-创建名为 jimmer_code_gen 的 database。
-
-```sql
-CREATE DATABASE jimmer_code_gen;
-```
-
-在其中执行 `resources/sql/mysql/jimmer_code_gen.sql`。
-
-之后修改 `application-mysql.yml` 中的连接配置。
-
-### PostgreSQL
-
-在默认 database postgres 下创建 schema jimmer_code_gen。
-
-```sql
-CREATE SCHEMA jimmer_code_gen;
-```
-
-在其中执行 `resources/sql/postgresql/jimmer_code_gen.sql`。
-
-之后修改 `application-postgresql.yml` 中的连接配置。
-
-## 项目启动
-
-运行 `src/main/kotlin/top/potmot/JimmerCodeGenApplication.kt` 的 main 方法，启动后端项目。
-
-在后端项目启动成功后，在前端项目根目录下执行 `vite` 命令启动前端项目。
-
-:::warning
-请务必在后端项目完全启动后再运行前端，因为前端项目启动需要从后端获取 gen config 、type mapping 等基础配置信息。
-:::
-
-### 端口配置
-
-后端端口通过配置 [application.yml](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/resources/application.yml) 中的 `server.port` 进行修改，默认为 8080。
-
-前端端口通过配置 [vite.config.ts](https://github.com/pot-mot/jimmer-code-gen-vue3/blob/multi_column_ref/vite.config.ts) 中的 `server.port` 进行修改，默认为 4000。
-
-若变更后端接口且需要打包，就需要同步变更前端项目 [api](https://github.com/pot-mot/jimmer-code-gen-vue3/blob/multi_column_ref/src/api/index.ts) 中的 BASE_URL。
+端口改变需要调整前端请求路径重新打包，具体参照 [端口配置](/source-start/index.html#端口配置)。
 
 ## 模型创建
 
@@ -138,11 +28,11 @@ CREATE SCHEMA jimmer_code_gen;
 
 ### 表创建
 
-点击左侧菜单中的创建表或者双击画布空白位置就可以唤出表编辑会话框，其中可以编辑表本身、列、索引。
+双击画布空白位置就可以唤出表编辑会话框，其中可以编辑表本身、列、索引。
 
 ![create-table.png](/images/quick-start/create-table.png)
 
-双击存在的表节点的任意位置或者点击左侧 Node 栏的编辑按钮就可进行修改。
+双击表节点的任意位置就可进行修改。
 
 ### 列编辑
 
@@ -153,7 +43,7 @@ CREATE SCHEMA jimmer_code_gen;
 点击类型配置，可唤出列类型详细配置。
 一般情况下类型名称将保持为 jdbc 类型或从数据源导入时元数据的类型，并在**生成 TableDefine 时被翻译为预设的基本类型**。
 
-但在有些特殊情况，例如 postgres 的数组或者 mysql 的 enum 和 set 时，可按照需要启用【生成 DDL 时以字面类型覆盖 jdbc 类型】以覆盖默认翻译的类型。
+但在有些特殊情况，例如 postgres 的数组或者 mysql 的 enum 和 set 时，可按照需要启用【以字面类型覆盖 jdbc 类型】以覆盖默认翻译的类型。
 
 ![array-type-column.png](/images/quick-start/array-type-column.png)
 
@@ -187,18 +77,49 @@ CREATE SCHEMA jimmer_code_gen;
 
 为实线时，关联将被翻译为真实外键，且关联类型默认不进行配置（默认为真）。
 
-![real-association.png](/images/quick-start/real-association.png)
-![real-association-entity.png](/images/quick-start/real-association-entity.png)
+```sql
+ALTER TABLE `SOURCE` ADD CONSTRAINT `FK_SOURCE_TARGET` 
+    FOREIGN KEY (`TARGET_ID`)
+  REFERENCES `TARGET` (`ID`)
+   ON UPDATE RESTRICT;
+```
 
+```kotlin
+@ManyToOne
+@JoinColumn(
+    name = "TARGET_ID",
+    referencedColumnName = "ID"
+)
+val target: Target
+```
 
-为虚线时，关联在 DDL 中将只是一个占位注释，而关联将变为 Fake。
+为虚线时，关联在 DDL 中将只是一个占位注释，而 foreignKeyType 将被设置伪 Fake。
 
-![logical-association.png](/images/quick-start/logical-association.png)
-![logical-association-entity.png](/images/quick-start/logical-association-entity.png)
+```sql
+-- fake association FK_SOURCE_TARGET;
+```
 
-:::warning
-关联创建时会默认生成一个名称，但是当列名改变后，这个名称不会发生改变，所以**务必及时变更关联名称**以保证外键名称符合预期。
-:::
+```kotlin{5}
+@ManyToOne
+@JoinColumn(
+    name = "TARGET_ID",
+    referencedColumnName = "ID"
+    foreignKeyType = ForeignKeyType.FAKE
+)
+val target: Target
+```
+
+当然也可以在全局配置中设置默认启用伪外键，此时当关联为真时 foreignKeyType 将覆盖配置为 REAL。
+
+```kotlin{5}
+@ManyToOne
+@JoinColumn(
+    name = "TARGET_ID",
+    referencedColumnName = "ID"
+    foreignKeyType = ForeignKeyType.REAL
+)
+val target: Target
+```
 
 ## 预览生成
 
@@ -216,7 +137,7 @@ CREATE SCHEMA jimmer_code_gen;
 
 ## 外源导入
 
-模型支持从数据源导入、从模型导入以及从其他 model.json 导入（从其他 model.json 请请前往模型列表页左上角）。
+模型支持从数据源导入、从已持久化的模型导入。
 
 ### 从数据源导入
 
@@ -237,3 +158,9 @@ CREATE SCHEMA jimmer_code_gen;
 点击单表可仅导入表，点击 schema 将导入整个 schema：
 
 ![load-from-schema.png](/images/quick-start/load-from-schema.png)
+
+### 从模型导入
+
+![load-from-model.png](/images/quick-start/load-from-model.png)
+
+> 从模型导入则可以选择任何已经被持久化了的模型，包括当前模型

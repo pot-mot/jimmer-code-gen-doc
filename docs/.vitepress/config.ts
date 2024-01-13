@@ -3,7 +3,7 @@ export default {
     description: '旨在快捷创建 Jimmer 下实体与关联',
     base: '/jimmer-code-gen-doc/',
     head: [
-        ['link', {rel: 'icon', href: '/logo.png'}]
+        ['link', {rel: 'icon', href: 'logo.png'}]
     ],
 
     markdown: {
@@ -38,7 +38,15 @@ export default {
             },
             {
                 text: '快速开始',
-                link: '/quick-start/index.html'
+                link: '/quick-start/index.html',
+            },
+            {
+                text: '源码启动',
+                link: '/source-start/index.html',
+            },
+            {
+                text: '生成配置',
+                link: '/config/index.html',
             },
             {
                 text: '生成演示',
@@ -64,7 +72,11 @@ export default {
                     {
                         text: '图交互',
                         link: '/frontend/graph.html'
-                    }
+                    },
+                    {
+                        text: '操作历史',
+                        link: '/frontend/log.html'
+                    },
                 ]
             },
             {

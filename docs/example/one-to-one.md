@@ -149,6 +149,7 @@
                         ]
                     }
                 },
+                "zIndex": 20,
                 "ports": {
                     "groups": {
                         "COLUMN_PORT_GROUP": {
@@ -225,8 +226,7 @@
                             }
                         }
                     ]
-                },
-                "zIndex": 16
+                }
             },
             {
                 "position": {
@@ -284,6 +284,7 @@
                         "indexes": []
                     }
                 },
+                "zIndex": 22,
                 "ports": {
                     "groups": {
                         "COLUMN_PORT_GROUP": {
@@ -324,8 +325,7 @@
                             }
                         }
                     ]
-                },
-                "zIndex": 18
+                }
             },
             {
                 "shape": "ASSOCIATION_EDGE",
@@ -336,11 +336,7 @@
                     }
                 },
                 "id": "0df22f49-9052-47d9-a56d-56e1021ba519",
-                "source": {
-                    "cell": "b22de922-3082-435a-bf84-915cb1b1975e",
-                    "port": "50fb206a-8abe-4848-a22a-f787ba27a643"
-                },
-                "zIndex": 19,
+                "zIndex": 23,
                 "labels": [
                     {
                         "markup": [
@@ -398,6 +394,10 @@
                         "dissociateAction": "DELETE"
                     }
                 },
+                "source": {
+                    "cell": "b22de922-3082-435a-bf84-915cb1b1975e",
+                    "port": "50fb206a-8abe-4848-a22a-f787ba27a643"
+                },
                 "target": {
                     "cell": "481a990d-6d38-4049-b896-8a79d523d5ec",
                     "port": "5e08e449-202f-49bc-80bf-5d34b5233f2f"
@@ -418,8 +418,7 @@ CREATE UNIQUE INDEX `uidx_address_user` ON `user_address` (`user_id`);
 
 ALTER TABLE `user_address` ADD CONSTRAINT `fk_address_to_user` 
     FOREIGN KEY (`user_id`)
-  REFERENCES `user` (`id`)
-   ON UPDATE RESTRICT;
+  REFERENCES `user` (`id`);
 ```
 
 而表现在实体层面则就是一对 @OneToOne 属性。

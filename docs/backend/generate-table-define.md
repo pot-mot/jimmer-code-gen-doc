@@ -60,11 +60,11 @@ GenTableAssociationsView {
 
 因为不同数据库的 DDL 或多或少有些差异，所以需要这样一个抽象类作为入口，而令特定数据源去实现。
 
-[TableDefineBuilder](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/kotlin/top/potmot/core/database/generate/TableDefineBuilder.kt)
+[TableDefineBuilder](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/kotlin/top/potmot/core/database/generate/builder/TableDefineBuilder.kt)
 
 减少额外体力活的工具就是 Builder 这个字符串拼接工具。
 
-Builder 内塞了各种字符串化方法，在这个基础上进行扩展会相对容易。
+Builder 内置了各种字符串化方法，在这个基础上进行扩展会相对容易。
 
 ## 列类型
 

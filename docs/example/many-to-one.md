@@ -402,8 +402,7 @@ val orderDetails: List<OrderDetail>
 ```sql
 ALTER TABLE `order_detail` ADD CONSTRAINT `fk_detail_to_order` 
     FOREIGN KEY (`order_id`)
-  REFERENCES `sale_order` (`id`)
-  ON DELETE CASCADE ON UPDATE RESTRICT;
+  REFERENCES `sale_order` (`id`);
 ```
 
 ## 班级和学生（一对多，主指向子）
@@ -415,360 +414,360 @@ ALTER TABLE `order_detail` ADD CONSTRAINT `fk_detail_to_order`
     
 ```json
 {
-  "json": {
-    "cells": [
-      {
-        "position": {
-          "x": 647,
-          "y": 260
-        },
-        "size": {
-          "width": 255,
-          "height": 154
-        },
-        "view": "vue-shape-view",
-        "shape": "TABLE_NODE",
-        "id": "91ed97fc-b3a6-40c1-99dd-2782f4830099",
-        "data": {
-          "table": {
-            "name": "edu_student",
-            "comment": "学生",
-            "remark": "",
-            "orderKey": 0,
-            "type": "TABLE",
-            "columns": [
-              {
-                "orderKey": 1,
-                "name": "id",
-                "comment": "ID",
-                "typeCode": -5,
-                "overwriteByType": false,
-                "type": "BIGINT",
-                "typeNotNull": true,
-                "displaySize": 0,
-                "numericPrecision": 0,
-                "partOfPk": true,
-                "autoIncrement": true,
-                "remark": "",
-                "logicalDelete": false,
-                "businessKey": false
-              },
-              {
-                "orderKey": 2,
-                "name": "student_code",
-                "comment": "学号",
-                "typeCode": 12,
-                "overwriteByType": false,
-                "type": "VARCHAR",
-                "typeNotNull": true,
-                "displaySize": 0,
-                "numericPrecision": 0,
-                "partOfPk": false,
-                "autoIncrement": false,
-                "remark": "",
-                "logicalDelete": false,
-                "businessKey": false
-              },
-              {
-                "orderKey": 3,
-                "name": "name",
-                "comment": "名称",
-                "typeCode": 12,
-                "overwriteByType": false,
-                "type": "VARCHAR",
-                "typeNotNull": true,
-                "displaySize": 0,
-                "numericPrecision": 0,
-                "partOfPk": false,
-                "autoIncrement": false,
-                "remark": "",
-                "logicalDelete": false,
-                "businessKey": false
-              },
-              {
-                "orderKey": 4,
-                "name": "class_id",
-                "comment": "班级",
-                "typeCode": -5,
-                "overwriteByType": false,
-                "type": "BIGINT",
-                "typeNotNull": true,
-                "displaySize": 0,
-                "numericPrecision": 0,
-                "partOfPk": false,
-                "autoIncrement": false,
-                "remark": "",
-                "logicalDelete": false,
-                "businessKey": false
-              }
-            ],
-            "indexes": []
-          }
-        },
-        "zIndex": 24,
-        "ports": {
-          "groups": {
-            "COLUMN_PORT_GROUP": {
-              "position": "COLUMN_PORT",
-              "markup": [
-                {
-                  "tagName": "rect",
-                  "selector": "COLUMN_PORT_SELECTOR"
-                }
-              ],
-              "attrs": {
-                "COLUMN_PORT_SELECTOR": {
-                  "magnet": true,
-                  "fill": "rgba(0,0,0,0)",
-                  "height": 30,
-                  "width": 200
-                }
-              }
-            }
-          },
-          "items": [
+    "json": {
+        "cells": [
             {
-              "group": "COLUMN_PORT_GROUP",
-              "id": "d01ada82-ed4b-4ce0-b740-9614d281bcce",
-              "attrs": {
-                "COLUMN_PORT_SELECTOR": {
-                  "width": 255
-                }
-              }
-            },
-            {
-              "group": "COLUMN_PORT_GROUP",
-              "id": "620870e7-ea4f-435f-ac22-e03d4371a83c",
-              "attrs": {
-                "COLUMN_PORT_SELECTOR": {
-                  "width": 255
-                }
-              }
-            },
-            {
-              "group": "COLUMN_PORT_GROUP",
-              "id": "60cf11ba-0262-4d63-a572-b321381b4454",
-              "attrs": {
-                "COLUMN_PORT_SELECTOR": {
-                  "width": 255
-                }
-              }
-            },
-            {
-              "group": "COLUMN_PORT_GROUP",
-              "id": "ea9a90b2-34f9-4854-9e75-3c4bb60a317a",
-              "attrs": {
-                "COLUMN_PORT_SELECTOR": {
-                  "width": 255
-                }
-              }
-            }
-          ]
-        }
-      },
-      {
-        "position": {
-          "x": 206,
-          "y": 260
-        },
-        "size": {
-          "width": 241,
-          "height": 124
-        },
-        "view": "vue-shape-view",
-        "shape": "TABLE_NODE",
-        "id": "fab38c0d-a7f0-4e00-81e5-a229ae66735f",
-        "data": {
-          "table": {
-            "name": "edu_class",
-            "comment": "班级",
-            "remark": "",
-            "orderKey": 0,
-            "type": "TABLE",
-            "columns": [
-              {
-                "orderKey": 1,
-                "name": "id",
-                "comment": "ID",
-                "typeCode": -5,
-                "overwriteByType": false,
-                "type": "BIGINT",
-                "typeNotNull": true,
-                "displaySize": 0,
-                "numericPrecision": 0,
-                "partOfPk": true,
-                "autoIncrement": true,
-                "remark": "",
-                "logicalDelete": false,
-                "businessKey": false
-              },
-              {
-                "orderKey": 2,
-                "name": "class_code",
-                "comment": "班号",
-                "typeCode": 12,
-                "overwriteByType": false,
-                "type": "VARCHAR",
-                "typeNotNull": true,
-                "displaySize": 0,
-                "numericPrecision": 0,
-                "partOfPk": false,
-                "autoIncrement": false,
-                "remark": "",
-                "logicalDelete": false,
-                "businessKey": false
-              },
-              {
-                "orderKey": 3,
-                "name": "name",
-                "comment": "名称",
-                "typeCode": 12,
-                "overwriteByType": false,
-                "type": "VARCHAR",
-                "typeNotNull": true,
-                "displaySize": 0,
-                "numericPrecision": 0,
-                "partOfPk": false,
-                "autoIncrement": false,
-                "remark": "",
-                "logicalDelete": false,
-                "businessKey": false
-              }
-            ],
-            "indexes": []
-          }
-        },
-        "zIndex": 26,
-        "ports": {
-          "groups": {
-            "COLUMN_PORT_GROUP": {
-              "position": "COLUMN_PORT",
-              "markup": [
-                {
-                  "tagName": "rect",
-                  "selector": "COLUMN_PORT_SELECTOR"
-                }
-              ],
-              "attrs": {
-                "COLUMN_PORT_SELECTOR": {
-                  "magnet": true,
-                  "fill": "rgba(0,0,0,0)",
-                  "height": 30,
-                  "width": 200
-                }
-              }
-            }
-          },
-          "items": [
-            {
-              "group": "COLUMN_PORT_GROUP",
-              "id": "6e4022e9-90aa-455c-b221-0fcc65a7bbbb",
-              "attrs": {
-                "COLUMN_PORT_SELECTOR": {
-                  "width": 241
-                }
-              }
-            },
-            {
-              "group": "COLUMN_PORT_GROUP",
-              "id": "19ce8120-43d4-4e3d-ba2e-6a96015791df",
-              "attrs": {
-                "COLUMN_PORT_SELECTOR": {
-                  "width": 241
-                }
-              }
-            },
-            {
-              "group": "COLUMN_PORT_GROUP",
-              "id": "130897a5-ef2f-491e-873b-c0726d199b10",
-              "attrs": {
-                "COLUMN_PORT_SELECTOR": {
-                  "width": 241
-                }
-              }
-            }
-          ]
-        }
-      },
-      {
-        "shape": "ASSOCIATION_EDGE",
-        "router": {
-          "name": "er",
-          "args": {
-            "direction": "H"
-          }
-        },
-        "id": "b728b01d-5615-434f-b309-da31f7e0d49c",
-        "data": {
-          "association": {
-            "associationType": "ONE_TO_MANY",
-            "fake": false,
-            "name": "fk_student_to_class",
-            "sourceTable": {
-              "name": "edu_class",
-              "comment": "班级"
-            },
-            "targetTable": {
-              "name": "edu_student",
-              "comment": "学生"
-            },
-            "columnReferences": [
-              {
-                "sourceColumn": {
-                  "name": "id",
-                  "comment": "ID",
-                  "type": "BIGINT",
-                  "typeCode": -5
+                "position": {
+                    "x": 647,
+                    "y": 260
                 },
-                "targetColumn": {
-                  "name": "class_id",
-                  "comment": "班级",
-                  "type": "BIGINT",
-                  "typeCode": -5
+                "size": {
+                    "width": 255,
+                    "height": 154
+                },
+                "view": "vue-shape-view",
+                "shape": "TABLE_NODE",
+                "id": "91ed97fc-b3a6-40c1-99dd-2782f4830099",
+                "data": {
+                    "table": {
+                        "name": "edu_student",
+                        "comment": "学生",
+                        "remark": "",
+                        "orderKey": 0,
+                        "type": "TABLE",
+                        "columns": [
+                            {
+                                "orderKey": 1,
+                                "name": "id",
+                                "comment": "ID",
+                                "typeCode": -5,
+                                "overwriteByType": false,
+                                "type": "BIGINT",
+                                "typeNotNull": true,
+                                "displaySize": 0,
+                                "numericPrecision": 0,
+                                "partOfPk": true,
+                                "autoIncrement": true,
+                                "remark": "",
+                                "logicalDelete": false,
+                                "businessKey": false
+                            },
+                            {
+                                "orderKey": 2,
+                                "name": "student_code",
+                                "comment": "学号",
+                                "typeCode": 12,
+                                "overwriteByType": false,
+                                "type": "VARCHAR",
+                                "typeNotNull": true,
+                                "displaySize": 0,
+                                "numericPrecision": 0,
+                                "partOfPk": false,
+                                "autoIncrement": false,
+                                "remark": "",
+                                "logicalDelete": false,
+                                "businessKey": false
+                            },
+                            {
+                                "orderKey": 3,
+                                "name": "name",
+                                "comment": "名称",
+                                "typeCode": 12,
+                                "overwriteByType": false,
+                                "type": "VARCHAR",
+                                "typeNotNull": true,
+                                "displaySize": 0,
+                                "numericPrecision": 0,
+                                "partOfPk": false,
+                                "autoIncrement": false,
+                                "remark": "",
+                                "logicalDelete": false,
+                                "businessKey": false
+                            },
+                            {
+                                "orderKey": 4,
+                                "name": "class_id",
+                                "comment": "班级",
+                                "typeCode": -5,
+                                "overwriteByType": false,
+                                "type": "BIGINT",
+                                "typeNotNull": true,
+                                "displaySize": 0,
+                                "numericPrecision": 0,
+                                "partOfPk": false,
+                                "autoIncrement": false,
+                                "remark": "",
+                                "logicalDelete": false,
+                                "businessKey": false
+                            }
+                        ],
+                        "indexes": []
+                    }
+                },
+                "zIndex": 28,
+                "ports": {
+                    "groups": {
+                        "COLUMN_PORT_GROUP": {
+                            "position": "COLUMN_PORT",
+                            "markup": [
+                                {
+                                    "tagName": "rect",
+                                    "selector": "COLUMN_PORT_SELECTOR"
+                                }
+                            ],
+                            "attrs": {
+                                "COLUMN_PORT_SELECTOR": {
+                                    "magnet": true,
+                                    "fill": "rgba(0,0,0,0)",
+                                    "height": 30,
+                                    "width": 200
+                                }
+                            }
+                        }
+                    },
+                    "items": [
+                        {
+                            "group": "COLUMN_PORT_GROUP",
+                            "id": "d01ada82-ed4b-4ce0-b740-9614d281bcce",
+                            "attrs": {
+                                "COLUMN_PORT_SELECTOR": {
+                                    "width": 255
+                                }
+                            }
+                        },
+                        {
+                            "group": "COLUMN_PORT_GROUP",
+                            "id": "620870e7-ea4f-435f-ac22-e03d4371a83c",
+                            "attrs": {
+                                "COLUMN_PORT_SELECTOR": {
+                                    "width": 255
+                                }
+                            }
+                        },
+                        {
+                            "group": "COLUMN_PORT_GROUP",
+                            "id": "60cf11ba-0262-4d63-a572-b321381b4454",
+                            "attrs": {
+                                "COLUMN_PORT_SELECTOR": {
+                                    "width": 255
+                                }
+                            }
+                        },
+                        {
+                            "group": "COLUMN_PORT_GROUP",
+                            "id": "ea9a90b2-34f9-4854-9e75-3c4bb60a317a",
+                            "attrs": {
+                                "COLUMN_PORT_SELECTOR": {
+                                    "width": 255
+                                }
+                            }
+                        }
+                    ]
                 }
-              }
-            ]
-          }
-        },
-        "source": {
-          "cell": "fab38c0d-a7f0-4e00-81e5-a229ae66735f",
-          "port": "6e4022e9-90aa-455c-b221-0fcc65a7bbbb"
-        },
-        "target": {
-          "cell": "91ed97fc-b3a6-40c1-99dd-2782f4830099",
-          "port": "ea9a90b2-34f9-4854-9e75-3c4bb60a317a"
-        },
-        "zIndex": 27,
-        "labels": [
-          {
-            "markup": [
-              {
-                "tagName": "rect",
-                "selector": "body"
-              },
-              {
-                "tagName": "text",
-                "selector": "ASSOCIATION_LABEL_TEXT_SELECTOR"
-              }
-            ],
-            "attrs": {
-              "ASSOCIATION_LABEL_TEXT_SELECTOR": {
-                "text": "ONE_TO_MANY",
-                "fill": "var(--common-color)",
-                "fontWeight": "normal"
-              },
-              "body": {
-                "ref": "ASSOCIATION_LABEL_TEXT_SELECTOR",
-                "fill": "#f5f5f5"
-              }
+            },
+            {
+                "position": {
+                    "x": 206,
+                    "y": 260
+                },
+                "size": {
+                    "width": 241,
+                    "height": 124
+                },
+                "view": "vue-shape-view",
+                "shape": "TABLE_NODE",
+                "id": "fab38c0d-a7f0-4e00-81e5-a229ae66735f",
+                "data": {
+                    "table": {
+                        "name": "edu_class",
+                        "comment": "班级",
+                        "remark": "",
+                        "orderKey": 0,
+                        "type": "TABLE",
+                        "columns": [
+                            {
+                                "orderKey": 1,
+                                "name": "id",
+                                "comment": "ID",
+                                "typeCode": -5,
+                                "overwriteByType": false,
+                                "type": "BIGINT",
+                                "typeNotNull": true,
+                                "displaySize": 0,
+                                "numericPrecision": 0,
+                                "partOfPk": true,
+                                "autoIncrement": true,
+                                "remark": "",
+                                "logicalDelete": false,
+                                "businessKey": false
+                            },
+                            {
+                                "orderKey": 2,
+                                "name": "class_code",
+                                "comment": "班号",
+                                "typeCode": 12,
+                                "overwriteByType": false,
+                                "type": "VARCHAR",
+                                "typeNotNull": true,
+                                "displaySize": 0,
+                                "numericPrecision": 0,
+                                "partOfPk": false,
+                                "autoIncrement": false,
+                                "remark": "",
+                                "logicalDelete": false,
+                                "businessKey": false
+                            },
+                            {
+                                "orderKey": 3,
+                                "name": "name",
+                                "comment": "名称",
+                                "typeCode": 12,
+                                "overwriteByType": false,
+                                "type": "VARCHAR",
+                                "typeNotNull": true,
+                                "displaySize": 0,
+                                "numericPrecision": 0,
+                                "partOfPk": false,
+                                "autoIncrement": false,
+                                "remark": "",
+                                "logicalDelete": false,
+                                "businessKey": false
+                            }
+                        ],
+                        "indexes": []
+                    }
+                },
+                "zIndex": 30,
+                "ports": {
+                    "groups": {
+                        "COLUMN_PORT_GROUP": {
+                            "position": "COLUMN_PORT",
+                            "markup": [
+                                {
+                                    "tagName": "rect",
+                                    "selector": "COLUMN_PORT_SELECTOR"
+                                }
+                            ],
+                            "attrs": {
+                                "COLUMN_PORT_SELECTOR": {
+                                    "magnet": true,
+                                    "fill": "rgba(0,0,0,0)",
+                                    "height": 30,
+                                    "width": 200
+                                }
+                            }
+                        }
+                    },
+                    "items": [
+                        {
+                            "group": "COLUMN_PORT_GROUP",
+                            "id": "6e4022e9-90aa-455c-b221-0fcc65a7bbbb",
+                            "attrs": {
+                                "COLUMN_PORT_SELECTOR": {
+                                    "width": 241
+                                }
+                            }
+                        },
+                        {
+                            "group": "COLUMN_PORT_GROUP",
+                            "id": "19ce8120-43d4-4e3d-ba2e-6a96015791df",
+                            "attrs": {
+                                "COLUMN_PORT_SELECTOR": {
+                                    "width": 241
+                                }
+                            }
+                        },
+                        {
+                            "group": "COLUMN_PORT_GROUP",
+                            "id": "130897a5-ef2f-491e-873b-c0726d199b10",
+                            "attrs": {
+                                "COLUMN_PORT_SELECTOR": {
+                                    "width": 241
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "shape": "ASSOCIATION_EDGE",
+                "router": {
+                    "name": "er",
+                    "args": {
+                        "direction": "H"
+                    }
+                },
+                "id": "b728b01d-5615-434f-b309-da31f7e0d49c",
+                "data": {
+                    "association": {
+                        "associationType": "ONE_TO_MANY",
+                        "fake": false,
+                        "name": "fk_student_to_class",
+                        "sourceTable": {
+                            "name": "edu_class",
+                            "comment": "班级"
+                        },
+                        "targetTable": {
+                            "name": "edu_student",
+                            "comment": "学生"
+                        },
+                        "columnReferences": [
+                            {
+                                "sourceColumn": {
+                                    "name": "id",
+                                    "comment": "ID",
+                                    "type": "BIGINT",
+                                    "typeCode": -5
+                                },
+                                "targetColumn": {
+                                    "name": "class_id",
+                                    "comment": "班级",
+                                    "type": "BIGINT",
+                                    "typeCode": -5
+                                }
+                            }
+                        ]
+                    }
+                },
+                "zIndex": 31,
+                "labels": [
+                    {
+                        "markup": [
+                            {
+                                "tagName": "rect",
+                                "selector": "body"
+                            },
+                            {
+                                "tagName": "text",
+                                "selector": "ASSOCIATION_LABEL_TEXT_SELECTOR"
+                            }
+                        ],
+                        "attrs": {
+                            "ASSOCIATION_LABEL_TEXT_SELECTOR": {
+                                "text": "ONE_TO_MANY",
+                                "fill": "var(--common-color)",
+                                "fontWeight": "normal"
+                            },
+                            "body": {
+                                "ref": "ASSOCIATION_LABEL_TEXT_SELECTOR",
+                                "fill": "#f5f5f5"
+                            }
+                        }
+                    }
+                ],
+                "source": {
+                    "cell": "fab38c0d-a7f0-4e00-81e5-a229ae66735f",
+                    "port": "6e4022e9-90aa-455c-b221-0fcc65a7bbbb"
+                },
+                "target": {
+                    "cell": "91ed97fc-b3a6-40c1-99dd-2782f4830099",
+                    "port": "ea9a90b2-34f9-4854-9e75-3c4bb60a317a"
+                }
             }
-          }
         ]
-      }
-    ]
-  },
-  "zoom": 1.05,
-  "transform": "matrix(1.05,0,0,1.05,-42.813726916255405,-16.9742578540193)"
+    },
+    "zoom": 1.05,
+    "transform": "matrix(1.05,0,0,1.05,-42.813757433834894,-16.974278834855227)"
 }
 ```
 </details>
@@ -778,8 +777,7 @@ ALTER TABLE `order_detail` ADD CONSTRAINT `fk_detail_to_order`
 ```sql
 ALTER TABLE `edu_student` ADD CONSTRAINT `fk_student_to_class` 
     FOREIGN KEY (`class_id`)
-  REFERENCES `edu_class` (`id`)
-  ON DELETE CASCADE ON UPDATE RESTRICT;
+  REFERENCES `edu_class` (`id`);
 ```
 
 生成的属性也和上面的多对一没有本质差异

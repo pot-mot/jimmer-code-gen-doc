@@ -2,13 +2,13 @@
 
 ## 响应式数据
 
-[reactiveState.ts](https://github.com/pot-mot/jimmer-code-gen-vue3/blob/multi_column_ref/src/components/business/graphEditor/common/reactiveState.ts)
+[reactiveState.ts](https://github.com/pot-mot/jimmer-code-gen-vue3/blob/multi_column_ref/src/components/global/graphEditor/common/reactiveState.ts)
 
 由于 AntV/X6 Graph 中的数据不具备响应式，导致在 Vue 中的开发体检不佳，因此补充了上面这个在图创建时监听各种事件，以达到让基本数据为响应式的 Hook。
 
 ## 撤回重做
 
-[useHistory.ts](https://github.com/pot-mot/jimmer-code-gen-vue3/blob/multi_column_ref/src/components/business/graphEditor/history/useHistory.ts)
+[useHistory.ts](https://github.com/pot-mot/jimmer-code-gen-vue3/blob/multi_column_ref/src/components/global/graphEditor/history/useHistory.ts)
 
 快捷键是 【ctrl+z】（撤回）、【ctrl+shift+z】（重做）。
 
@@ -16,34 +16,53 @@
 
 ## 复制粘贴
 
-[clipBoard.ts](https://github.com/pot-mot/jimmer-code-gen-vue3/blob/multi_column_ref/src/components/business/modelGraphEditor/clipBoard.ts)
+[clipBoard.ts](https://github.com/pot-mot/jimmer-code-gen-vue3/blob/multi_column_ref/src/components/pages/ModelEditor/graph/data/clipBoard.ts)
 
-快捷键自然是熟悉的 【ctrl+c】（复制）、【ctrl+v】（粘贴）、【ctrl+x】（剪切）。
+快捷键是 【ctrl+c】（复制）、【ctrl+v】（粘贴）、【ctrl+x】（剪切）。
 
-目前模型设计器支持粘贴两种数据:
+目前模型设计器支持粘贴三种数据:
+
+### CopyData
 
 ```typescript
-{
-    tables: Array<GenTableModelInput> 
-    associations: Array<GenAssociationModelInput>
+interface CopyData {
+    tables: GenTableModelInput[],
+    associations: GenAssociationModelInput[],
+    enums: GenModelInput_TargetOf_enums[]
 }
 ```
 
+[CopyData](https://github.com/pot-mot/jimmer-code-gen-vue3/blob/multi_column_ref/src/shape/CopyData.ts)
+
+在页面中选中表和关联复制得到的数据结构。
+
+### GraphData
+
 ```typescript
-{
-    cells: Array<Cell>
-    zoom: number
+interface GraphData {
+    cells: Array<Cell>,
+    zoom: number,
     transform: string | null
 }
 ```
 
-前者同时也是复制黏贴表与关联时获取到的数据格式，后者则是 GraphData.json 的标准类型声明。
+[GraphData](https://github.com/pot-mot/jimmer-code-gen-vue3/blob/multi_column_ref/src/shape/GraphData.ts)
+
+Model 的 graphData 的标准类型声明，相较 CopyData 粘贴时将**缺少枚举信息**。
+
+### ModelInput
+
+[ModelInput](https://github.com/pot-mot/jimmer-code-gen-vue3/blob/multi_column_ref/src/shape/ModelInput.ts)
+
+ModelInput，即直接导出的 model.json。
+
+通过粘贴与直接导入模型相比将只会导入 graphData 和 enums。
 
 ## 多选、框选与移动
 
-[useSelection.ts](https://github.com/pot-mot/jimmer-code-gen-vue3/blob/multi_column_ref/src/components/business/graphEditor/selection/useSelection.ts)
+[useSelection.ts](https://github.com/pot-mot/jimmer-code-gen-vue3/blob/multi_column_ref/src/components/global/graphEditor/selection/useSelection.ts)
 
-可以使用左键进行批量框选，快捷键是 【ctrl+a】（全选）、【delete/backspace】（删除）、【delete/backspace + shift】（删除关联）、【up\down\left\right ( + ctrl)】方向键移动。
+可以使用左键进行批量框选，快捷键是 【ctrl+a】（全选）、【delete/backspace】（删除）、【delete/backspace + shift】（删除关联）、【up\down\left\right ( + ctrl)】方向键移动表位置。
 
 :::warning
 目前框选是基于 AntV/X6 Selection 实现的，边的框选判断标准是基于矩形，所以存在误选的可能，此处需要留心。
@@ -51,11 +70,11 @@
 
 ## 布局
 
-[layoutByLevel.ts](https://github.com/pot-mot/jimmer-code-gen-vue3/blob/multi_column_ref/src/components/business/graphEditor/layout/layoutByLevel.ts)
+[layoutByLevel.ts](https://github.com/pot-mot/jimmer-code-gen-vue3/blob/multi_column_ref/src/components/global/graphEditor/layout/layoutByLevel.ts)
 
-目前的布局还是比较简陋的，只是按照基本序遍历排出层级，目标只是**尽可能表达出表间依赖关系**。
+目前的布局实现较为简单，仅按照基本序遍历排出层级，目标是**尽可能整理出表间依赖关系**。
 
-（以及不用 AntV 官方自带的几种布局的主要原因是表的尺寸是变动的，没有找到比较好的适配方案）
+（不使用 AntV 官方提供布局的主要原因是表节点的尺寸是变动的，并比较好的适配方案。如果有，欢迎 PR。）
 
 :::warning
 ### 导入时的延迟

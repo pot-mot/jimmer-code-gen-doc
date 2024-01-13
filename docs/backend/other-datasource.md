@@ -1,22 +1,29 @@
 # 支持其他数据源
 
-首先自然是需要补充 [DataSourceType](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/kotlin/top/potmot/enumeration/DataSourceType.kt) 枚举值，并**重新生成前端项目的 api**（在前端根目录下执行 `pnpm run api`）。
+目前项目支持数据源存在两个角度，一是元数据获取，二是生成 TableDefine，下面将从两个角度说明数据源支持的实现。
 
 ## 元数据获取
 
-目前项目的元数据是基于 SchemaCrawler 实现的，所以只要是这个库可以支持的数据源就可以被本项目支持。
+不同数据源元数据结构差异较大，所以本项目并不选择直接获取元数据，而是基于 [SchemaCrawler](https://www.schemacrawler.com/) 实现。
 
-只需要在 [build.gradle.kts](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/build.gradle.kts) 补充对应的 us.fatehi:schemacrawler-[ ] 依赖即可。
 
-目前获取元数据的思路就是从数据源获取 SchemaCrawler 下的各种 Metadata，并翻译为本项目下的数据模型并持久化。具体实现参考 [DataSourceLoad.kt](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src%2Fmain%2Fkotlin%2Ftop%2Fpotmot%2Fcore%2Fdatabase%2Fload%2FDataSourceLoad.kt)。
+目前从 SchemaCrawler 导入仅有 [DataSourceLoad](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/kotlin/top/potmot/core/database/load/DataSourceLoad.kt) 是唯一一处入口，因此只要目标数据源可以被 SchemaCrawler 支持就可以被本项目使用。
+
+此时只需要在 [build.gradle.kts](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/build.gradle.kts) 补充对应的 us.fatehi:schemacrawler-[ ] 依赖即可。
+
+如果数据源不被 SchemaCrawler 支持则需要自行使用 JDBC 从目标数据源获取元数据并拼凑保存 Table、Association 等信息。
 
 ## 生成 TableDefine
 
-这一块是与元数据获取是无关的，所以即使没有办法通过 SchemaCrawler 获取对应元数据也可以生成对应的 TableDefine。
+这一块是与元数据获取是无关的，本质只是拼凑字符串，所以即使没有办法通过 SchemaCrawler 获取对应元数据，也可以生成对应的 TableDefine。
 
-针对目标数据源实现以下两个类，并补充对应入口文件，就可以生成对应的 TableDefine 了：
+针对目标数据源实现以下两个类，并补充对应入口文件即可：
 
 - [ColumnTypeDefiner.kt](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/kotlin/top/potmot/core/database/generate/ColumnTypeDefiner.kt)
     - [ColumnTypeDefine.kt](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/kotlin/top/potmot/core/database/generate/ColumnTypeDefine.kt) 入口文件
 - [TableDefineGenerator.kt](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/kotlin/top/potmot/core/database/generate/TableDefineGenerator.kt)
     - [TableDefineGenerate.kt](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/kotlin/top/potmot/core/database/generate/TableDefineGenerate.kt) 入口文件
+
+## 补充枚举值
+
+最后即补充 [DataSourceType](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/kotlin/top/potmot/enumeration/DataSourceType.kt) 枚举值，并**重新生成前端项目的 api**（在前端根目录下执行 `pnpm run api`）。
