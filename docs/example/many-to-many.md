@@ -4,11 +4,11 @@
 
 多对多也相当常见，在这种关联中，双方是平等的，所以关联由哪一方发起并不重要。
 
-在数据模型层面，这种关联除非采用非常不利于查询的数组存储，否则一般采用中间表实现。
+在数据模型层面采用中间表实现。
 
 当对中间表没有任何额外要求时，仅需要创建一条位于两个表主键列间的 ManyToMany 关联即可隐式的创建一张纯粹的中间表。
 
-（当有额外存储需要，例如变更时间时，则必须要显式创建中间表并创建两条 ManyToOne 关联。更多内容请参考 Jimmer 的 ManyToManyView 这个功能）
+（当有额外存储需要，例如变更时间时，则必须要显式创建中间表并创建两条 ManyToOne 关联。更多内容请参考 Jimmer 的 [ManyToManyView](https://babyfish-ct.gitee.io/jimmer-doc/docs/mapping/advanced/view/many-to-many-view/) 这个功能）
 
 ## 厂家与产品
 

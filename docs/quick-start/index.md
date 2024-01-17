@@ -7,11 +7,9 @@
 
 快速体验本项目可以直接通过 [发行版](https://github.com/pot-mot/jimmer-code-gen-kotlin/releases) 的 jar 包直接启动本项目。
 
-此时直接使用  `java -jar <JAR>` 即可启动项目，之后从浏览器访问 `localhost:8080` 即可。
+此时直接使用  `java -jar <JAR>` 即可启动项目，之后从浏览器访问 `localhost:port` 即可，默认端口 8080。
 
-jar 默认以 h2 启动，所以不需要配置任何数据源，如有需要请自行通过命令行参数配置 [数据源](/source-start/index.html#数据源配置)。
-
-端口改变需要调整前端请求路径重新打包，具体参照 [端口配置](/source-start/index.html#端口配置)。
+jar 默认以 h2 启动，所以不需要配置任何数据源，但仅使用内存启动，因此请及时导出 model，如有需要请自行通过命令行进行参数配置 [数据源](/source-start/index.html#数据源配置)。
 
 ## 模型创建
 

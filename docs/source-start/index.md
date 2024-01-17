@@ -109,4 +109,14 @@ CREATE SCHEMA jimmer_code_gen;
 
 前端端口通过配置 [vite.config.ts](https://github.com/pot-mot/jimmer-code-gen-vue3/blob/multi_column_ref/vite.config.ts) 中的 `server.port` 进行修改，默认为 4000。
 
-若变更后端接口且需要打包，就需要同步变更前端项目 [api](https://github.com/pot-mot/jimmer-code-gen-vue3/blob/multi_column_ref/src/api/index.ts) 中的 BASE_URL。
+## 项目打包
+
+如果需要打包，在前端根目录下使用 `pnpm run build` 打包为 dist，放置于后端 resources 下，之后使用 bootJar 打包，最终产物将位于 `/build/libs` 下。
+
+默认静态资源路径已在 [application.yml](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/resources/application.yml) 中通过配置覆盖至 classpath:/dist，如有需要自行调整。
+```yaml
+spring:
+  web:
+    resources:
+      static-locations: classpath:/dist
+```
