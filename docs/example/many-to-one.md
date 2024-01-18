@@ -107,7 +107,7 @@
                         "indexes": []
                     }
                 },
-                "zIndex": 16,
+                "zIndex": 24,
                 "ports": {
                     "groups": {
                         "COLUMN_PORT_GROUP": {
@@ -240,7 +240,7 @@
                         "indexes": []
                     }
                 },
-                "zIndex": 22,
+                "zIndex": 30,
                 "ports": {
                     "groups": {
                         "COLUMN_PORT_GROUP": {
@@ -301,7 +301,7 @@
                     }
                 },
                 "id": "7b792f71-dbcc-4ebc-89a1-ac21349fa9a9",
-                "zIndex": 23,
+                "zIndex": 31,
                 "labels": [
                     {
                         "markup": [
@@ -418,156 +418,7 @@ ALTER TABLE `order_detail` ADD CONSTRAINT `fk_detail_to_order`
         "cells": [
             {
                 "position": {
-                    "x": 647,
-                    "y": 260
-                },
-                "size": {
-                    "width": 255,
-                    "height": 154
-                },
-                "view": "vue-shape-view",
-                "shape": "TABLE_NODE",
-                "id": "91ed97fc-b3a6-40c1-99dd-2782f4830099",
-                "data": {
-                    "table": {
-                        "name": "edu_student",
-                        "comment": "学生",
-                        "remark": "",
-                        "orderKey": 0,
-                        "type": "TABLE",
-                        "columns": [
-                            {
-                                "orderKey": 1,
-                                "name": "id",
-                                "comment": "ID",
-                                "typeCode": -5,
-                                "overwriteByType": false,
-                                "type": "BIGINT",
-                                "typeNotNull": true,
-                                "displaySize": 0,
-                                "numericPrecision": 0,
-                                "partOfPk": true,
-                                "autoIncrement": true,
-                                "remark": "",
-                                "logicalDelete": false,
-                                "businessKey": false
-                            },
-                            {
-                                "orderKey": 2,
-                                "name": "student_code",
-                                "comment": "学号",
-                                "typeCode": 12,
-                                "overwriteByType": false,
-                                "type": "VARCHAR",
-                                "typeNotNull": true,
-                                "displaySize": 0,
-                                "numericPrecision": 0,
-                                "partOfPk": false,
-                                "autoIncrement": false,
-                                "remark": "",
-                                "logicalDelete": false,
-                                "businessKey": false
-                            },
-                            {
-                                "orderKey": 3,
-                                "name": "name",
-                                "comment": "名称",
-                                "typeCode": 12,
-                                "overwriteByType": false,
-                                "type": "VARCHAR",
-                                "typeNotNull": true,
-                                "displaySize": 0,
-                                "numericPrecision": 0,
-                                "partOfPk": false,
-                                "autoIncrement": false,
-                                "remark": "",
-                                "logicalDelete": false,
-                                "businessKey": false
-                            },
-                            {
-                                "orderKey": 4,
-                                "name": "class_id",
-                                "comment": "班级",
-                                "typeCode": -5,
-                                "overwriteByType": false,
-                                "type": "BIGINT",
-                                "typeNotNull": true,
-                                "displaySize": 0,
-                                "numericPrecision": 0,
-                                "partOfPk": false,
-                                "autoIncrement": false,
-                                "remark": "",
-                                "logicalDelete": false,
-                                "businessKey": false
-                            }
-                        ],
-                        "indexes": []
-                    }
-                },
-                "zIndex": 28,
-                "ports": {
-                    "groups": {
-                        "COLUMN_PORT_GROUP": {
-                            "position": "COLUMN_PORT",
-                            "markup": [
-                                {
-                                    "tagName": "rect",
-                                    "selector": "COLUMN_PORT_SELECTOR"
-                                }
-                            ],
-                            "attrs": {
-                                "COLUMN_PORT_SELECTOR": {
-                                    "magnet": true,
-                                    "fill": "rgba(0,0,0,0)",
-                                    "height": 30,
-                                    "width": 200
-                                }
-                            }
-                        }
-                    },
-                    "items": [
-                        {
-                            "group": "COLUMN_PORT_GROUP",
-                            "id": "d01ada82-ed4b-4ce0-b740-9614d281bcce",
-                            "attrs": {
-                                "COLUMN_PORT_SELECTOR": {
-                                    "width": 255
-                                }
-                            }
-                        },
-                        {
-                            "group": "COLUMN_PORT_GROUP",
-                            "id": "620870e7-ea4f-435f-ac22-e03d4371a83c",
-                            "attrs": {
-                                "COLUMN_PORT_SELECTOR": {
-                                    "width": 255
-                                }
-                            }
-                        },
-                        {
-                            "group": "COLUMN_PORT_GROUP",
-                            "id": "60cf11ba-0262-4d63-a572-b321381b4454",
-                            "attrs": {
-                                "COLUMN_PORT_SELECTOR": {
-                                    "width": 255
-                                }
-                            }
-                        },
-                        {
-                            "group": "COLUMN_PORT_GROUP",
-                            "id": "ea9a90b2-34f9-4854-9e75-3c4bb60a317a",
-                            "attrs": {
-                                "COLUMN_PORT_SELECTOR": {
-                                    "width": 255
-                                }
-                            }
-                        }
-                    ]
-                }
-            },
-            {
-                "position": {
-                    "x": 206,
+                    "x": 661,
                     "y": 260
                 },
                 "size": {
@@ -593,7 +444,7 @@ ALTER TABLE `order_detail` ADD CONSTRAINT `fk_detail_to_order`
                                 "overwriteByType": false,
                                 "type": "BIGINT",
                                 "typeNotNull": true,
-                                "displaySize": 0,
+                                "displaySize": 19,
                                 "numericPrecision": 0,
                                 "partOfPk": true,
                                 "autoIncrement": true,
@@ -609,7 +460,7 @@ ALTER TABLE `order_detail` ADD CONSTRAINT `fk_detail_to_order`
                                 "overwriteByType": false,
                                 "type": "VARCHAR",
                                 "typeNotNull": true,
-                                "displaySize": 0,
+                                "displaySize": 500,
                                 "numericPrecision": 0,
                                 "partOfPk": false,
                                 "autoIncrement": false,
@@ -625,7 +476,7 @@ ALTER TABLE `order_detail` ADD CONSTRAINT `fk_detail_to_order`
                                 "overwriteByType": false,
                                 "type": "VARCHAR",
                                 "typeNotNull": true,
-                                "displaySize": 0,
+                                "displaySize": 500,
                                 "numericPrecision": 0,
                                 "partOfPk": false,
                                 "autoIncrement": false,
@@ -637,7 +488,7 @@ ALTER TABLE `order_detail` ADD CONSTRAINT `fk_detail_to_order`
                         "indexes": []
                     }
                 },
-                "zIndex": 30,
+                "zIndex": 42,
                 "ports": {
                     "groups": {
                         "COLUMN_PORT_GROUP": {
@@ -661,7 +512,7 @@ ALTER TABLE `order_detail` ADD CONSTRAINT `fk_detail_to_order`
                     "items": [
                         {
                             "group": "COLUMN_PORT_GROUP",
-                            "id": "6e4022e9-90aa-455c-b221-0fcc65a7bbbb",
+                            "id": "76d38cc5-8c1b-470f-9bab-a6064059d0a3",
                             "attrs": {
                                 "COLUMN_PORT_SELECTOR": {
                                     "width": 241
@@ -670,7 +521,7 @@ ALTER TABLE `order_detail` ADD CONSTRAINT `fk_detail_to_order`
                         },
                         {
                             "group": "COLUMN_PORT_GROUP",
-                            "id": "19ce8120-43d4-4e3d-ba2e-6a96015791df",
+                            "id": "d2a3c1ef-0078-4716-bce1-9d3969e5b35a",
                             "attrs": {
                                 "COLUMN_PORT_SELECTOR": {
                                     "width": 241
@@ -679,10 +530,159 @@ ALTER TABLE `order_detail` ADD CONSTRAINT `fk_detail_to_order`
                         },
                         {
                             "group": "COLUMN_PORT_GROUP",
-                            "id": "130897a5-ef2f-491e-873b-c0726d199b10",
+                            "id": "727559ed-f762-4e1f-80b7-c298c235290b",
                             "attrs": {
                                 "COLUMN_PORT_SELECTOR": {
                                     "width": 241
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "position": {
+                    "x": 206,
+                    "y": 260
+                },
+                "size": {
+                    "width": 255,
+                    "height": 154
+                },
+                "view": "vue-shape-view",
+                "shape": "TABLE_NODE",
+                "id": "91ed97fc-b3a6-40c1-99dd-2782f4830099",
+                "data": {
+                    "table": {
+                        "name": "edu_student",
+                        "comment": "学生",
+                        "remark": "",
+                        "orderKey": 0,
+                        "type": "TABLE",
+                        "columns": [
+                            {
+                                "orderKey": 1,
+                                "name": "id",
+                                "comment": "ID",
+                                "typeCode": -5,
+                                "overwriteByType": false,
+                                "type": "BIGINT",
+                                "typeNotNull": true,
+                                "displaySize": 19,
+                                "numericPrecision": 0,
+                                "partOfPk": true,
+                                "autoIncrement": true,
+                                "remark": "",
+                                "logicalDelete": false,
+                                "businessKey": false
+                            },
+                            {
+                                "orderKey": 2,
+                                "name": "student_code",
+                                "comment": "学号",
+                                "typeCode": 12,
+                                "overwriteByType": false,
+                                "type": "VARCHAR",
+                                "typeNotNull": true,
+                                "displaySize": 500,
+                                "numericPrecision": 0,
+                                "partOfPk": false,
+                                "autoIncrement": false,
+                                "remark": "",
+                                "logicalDelete": false,
+                                "businessKey": false
+                            },
+                            {
+                                "orderKey": 3,
+                                "name": "name",
+                                "comment": "名称",
+                                "typeCode": 12,
+                                "overwriteByType": false,
+                                "type": "VARCHAR",
+                                "typeNotNull": true,
+                                "displaySize": 500,
+                                "numericPrecision": 0,
+                                "partOfPk": false,
+                                "autoIncrement": false,
+                                "remark": "",
+                                "logicalDelete": false,
+                                "businessKey": false
+                            },
+                            {
+                                "orderKey": 4,
+                                "name": "class_id",
+                                "comment": "班级",
+                                "typeCode": -5,
+                                "overwriteByType": false,
+                                "type": "BIGINT",
+                                "typeNotNull": true,
+                                "displaySize": 19,
+                                "numericPrecision": 0,
+                                "partOfPk": false,
+                                "autoIncrement": false,
+                                "remark": "",
+                                "logicalDelete": false,
+                                "businessKey": false
+                            }
+                        ],
+                        "indexes": []
+                    }
+                },
+                "zIndex": 48,
+                "ports": {
+                    "groups": {
+                        "COLUMN_PORT_GROUP": {
+                            "position": "COLUMN_PORT",
+                            "markup": [
+                                {
+                                    "tagName": "rect",
+                                    "selector": "COLUMN_PORT_SELECTOR"
+                                }
+                            ],
+                            "attrs": {
+                                "COLUMN_PORT_SELECTOR": {
+                                    "magnet": true,
+                                    "fill": "rgba(0,0,0,0)",
+                                    "height": 30,
+                                    "width": 200
+                                }
+                            }
+                        }
+                    },
+                    "items": [
+                        {
+                            "group": "COLUMN_PORT_GROUP",
+                            "id": "8640eccb-a596-470c-bf5c-45df5ad27f42",
+                            "attrs": {
+                                "COLUMN_PORT_SELECTOR": {
+                                    "width": 255
+                                }
+                            }
+                        },
+                        {
+                            "group": "COLUMN_PORT_GROUP",
+                            "id": "87ff93e5-2872-456a-a1c9-651aaf989465",
+                            "attrs": {
+                                "COLUMN_PORT_SELECTOR": {
+                                    "width": 255
+                                }
+                            }
+                        },
+                        {
+                            "group": "COLUMN_PORT_GROUP",
+                            "id": "c3e1a0bd-bc7d-4262-9884-b995dc571966",
+                            "attrs": {
+                                "COLUMN_PORT_SELECTOR": {
+                                    "width": 255
+                                }
+                            }
+                        },
+                        {
+                            "group": "COLUMN_PORT_GROUP",
+                            "id": "ff873bb4-dd09-4f6a-95c4-02c56ab83105",
+                            "attrs": {
+                                "COLUMN_PORT_SELECTOR": {
+                                    "width": 255
                                 }
                             }
                         }
@@ -697,12 +697,12 @@ ALTER TABLE `order_detail` ADD CONSTRAINT `fk_detail_to_order`
                         "direction": "H"
                     }
                 },
-                "id": "b728b01d-5615-434f-b309-da31f7e0d49c",
+                "id": "d9c606cf-a627-4b22-a812-9992c3707da2",
                 "data": {
                     "association": {
                         "associationType": "ONE_TO_MANY",
                         "fake": false,
-                        "name": "fk_student_to_class",
+                        "name": "fk_edu_student_edu_class",
                         "sourceTable": {
                             "name": "edu_class",
                             "comment": "班级"
@@ -729,45 +729,20 @@ ALTER TABLE `order_detail` ADD CONSTRAINT `fk_detail_to_order`
                         ]
                     }
                 },
-                "zIndex": 31,
-                "labels": [
-                    {
-                        "markup": [
-                            {
-                                "tagName": "rect",
-                                "selector": "body"
-                            },
-                            {
-                                "tagName": "text",
-                                "selector": "ASSOCIATION_LABEL_TEXT_SELECTOR"
-                            }
-                        ],
-                        "attrs": {
-                            "ASSOCIATION_LABEL_TEXT_SELECTOR": {
-                                "text": "ONE_TO_MANY",
-                                "fill": "var(--common-color)",
-                                "fontWeight": "normal"
-                            },
-                            "body": {
-                                "ref": "ASSOCIATION_LABEL_TEXT_SELECTOR",
-                                "fill": "#f5f5f5"
-                            }
-                        }
-                    }
-                ],
                 "source": {
                     "cell": "fab38c0d-a7f0-4e00-81e5-a229ae66735f",
-                    "port": "6e4022e9-90aa-455c-b221-0fcc65a7bbbb"
+                    "port": "76d38cc5-8c1b-470f-9bab-a6064059d0a3"
                 },
                 "target": {
                     "cell": "91ed97fc-b3a6-40c1-99dd-2782f4830099",
-                    "port": "ea9a90b2-34f9-4854-9e75-3c4bb60a317a"
-                }
+                    "port": "ff873bb4-dd09-4f6a-95c4-02c56ab83105"
+                },
+                "zIndex": 49
             }
         ]
     },
-    "zoom": 1.05,
-    "transform": "matrix(1.05,0,0,1.05,-42.813757433834894,-16.974278834855227)"
+    "zoom": 1.426724161762543,
+    "transform": "matrix(1.426724161762543,0,0,1.426724161762543,-193.90518561644888,-41.80604251397699)"
 }
 ```
 </details>

@@ -47,7 +47,7 @@
                                 "overwriteByType": false,
                                 "type": "BIGINT",
                                 "typeNotNull": true,
-                                "displaySize": 0,
+                                "displaySize": 19,
                                 "numericPrecision": 0,
                                 "partOfPk": true,
                                 "autoIncrement": true,
@@ -63,7 +63,7 @@
                                 "overwriteByType": false,
                                 "type": "BIGINT",
                                 "typeNotNull": true,
-                                "displaySize": 0,
+                                "displaySize": 19,
                                 "numericPrecision": 0,
                                 "partOfPk": false,
                                 "autoIncrement": false,
@@ -79,7 +79,7 @@
                                 "overwriteByType": false,
                                 "type": "VARCHAR",
                                 "typeNotNull": true,
-                                "displaySize": 0,
+                                "displaySize": 500,
                                 "numericPrecision": 0,
                                 "partOfPk": false,
                                 "autoIncrement": false,
@@ -95,7 +95,7 @@
                                 "overwriteByType": false,
                                 "type": "VARCHAR",
                                 "typeNotNull": true,
-                                "displaySize": 0,
+                                "displaySize": 500,
                                 "numericPrecision": 0,
                                 "partOfPk": false,
                                 "autoIncrement": false,
@@ -111,7 +111,7 @@
                                 "overwriteByType": false,
                                 "type": "VARCHAR",
                                 "typeNotNull": true,
-                                "displaySize": 0,
+                                "displaySize": 500,
                                 "numericPrecision": 0,
                                 "partOfPk": false,
                                 "autoIncrement": false,
@@ -127,7 +127,7 @@
                                 "overwriteByType": false,
                                 "type": "VARCHAR",
                                 "typeNotNull": true,
-                                "displaySize": 0,
+                                "displaySize": 500,
                                 "numericPrecision": 0,
                                 "partOfPk": false,
                                 "autoIncrement": false,
@@ -149,7 +149,7 @@
                         ]
                     }
                 },
-                "zIndex": 20,
+                "zIndex": 30,
                 "ports": {
                     "groups": {
                         "COLUMN_PORT_GROUP": {
@@ -173,7 +173,7 @@
                     "items": [
                         {
                             "group": "COLUMN_PORT_GROUP",
-                            "id": "5bf7ea19-4109-44ab-aee9-ade83d5d7359",
+                            "id": "0237bb9a-c521-450d-9110-8f05a41a48b3",
                             "attrs": {
                                 "COLUMN_PORT_SELECTOR": {
                                     "width": 303
@@ -182,7 +182,7 @@
                         },
                         {
                             "group": "COLUMN_PORT_GROUP",
-                            "id": "50fb206a-8abe-4848-a22a-f787ba27a643",
+                            "id": "a061aa1b-cf06-43f5-8e24-012e6970df4c",
                             "attrs": {
                                 "COLUMN_PORT_SELECTOR": {
                                     "width": 303
@@ -191,7 +191,7 @@
                         },
                         {
                             "group": "COLUMN_PORT_GROUP",
-                            "id": "d999491d-3bde-41c3-8414-69fddcb077c5",
+                            "id": "5adf0ef3-31e7-4fb9-b904-54bc4cbe5d69",
                             "attrs": {
                                 "COLUMN_PORT_SELECTOR": {
                                     "width": 303
@@ -200,7 +200,7 @@
                         },
                         {
                             "group": "COLUMN_PORT_GROUP",
-                            "id": "bb09f2ca-d1e9-4b4c-83af-1ee5deec70a1",
+                            "id": "269e0186-f1df-436b-a04a-00e5751777ab",
                             "attrs": {
                                 "COLUMN_PORT_SELECTOR": {
                                     "width": 303
@@ -209,7 +209,7 @@
                         },
                         {
                             "group": "COLUMN_PORT_GROUP",
-                            "id": "b682c743-5d1c-47cb-b443-027ddf4660d4",
+                            "id": "eac70a8f-7ff8-47e1-a9a4-3687d07f7731",
                             "attrs": {
                                 "COLUMN_PORT_SELECTOR": {
                                     "width": 303
@@ -218,7 +218,7 @@
                         },
                         {
                             "group": "COLUMN_PORT_GROUP",
-                            "id": "a7177526-ed84-4721-a043-922fe875502a",
+                            "id": "5073057b-e86f-46d8-b84d-3c86c2f6f1bc",
                             "attrs": {
                                 "COLUMN_PORT_SELECTOR": {
                                     "width": 303
@@ -256,7 +256,7 @@
                                 "overwriteByType": false,
                                 "type": "BIGINT",
                                 "typeNotNull": true,
-                                "displaySize": 0,
+                                "displaySize": 19,
                                 "numericPrecision": 0,
                                 "partOfPk": true,
                                 "autoIncrement": true,
@@ -272,7 +272,7 @@
                                 "overwriteByType": false,
                                 "type": "VARCHAR",
                                 "typeNotNull": true,
-                                "displaySize": 0,
+                                "displaySize": 500,
                                 "numericPrecision": 0,
                                 "partOfPk": false,
                                 "autoIncrement": false,
@@ -284,7 +284,7 @@
                         "indexes": []
                     }
                 },
-                "zIndex": 22,
+                "zIndex": 34,
                 "ports": {
                     "groups": {
                         "COLUMN_PORT_GROUP": {
@@ -308,7 +308,7 @@
                     "items": [
                         {
                             "group": "COLUMN_PORT_GROUP",
-                            "id": "5e08e449-202f-49bc-80bf-5d34b5233f2f",
+                            "id": "ea65275b-473a-486a-991b-6b06b60e1923",
                             "attrs": {
                                 "COLUMN_PORT_SELECTOR": {
                                     "width": 169
@@ -317,7 +317,7 @@
                         },
                         {
                             "group": "COLUMN_PORT_GROUP",
-                            "id": "310be4bc-4df7-485b-9e16-8dd0ecb879e8",
+                            "id": "35bcecb8-1758-4d24-a4a2-4420e0f041b8",
                             "attrs": {
                                 "COLUMN_PORT_SELECTOR": {
                                     "width": 169
@@ -335,38 +335,12 @@
                         "direction": "H"
                     }
                 },
-                "id": "0df22f49-9052-47d9-a56d-56e1021ba519",
-                "zIndex": 23,
-                "labels": [
-                    {
-                        "markup": [
-                            {
-                                "tagName": "rect",
-                                "selector": "body"
-                            },
-                            {
-                                "tagName": "text",
-                                "selector": "ASSOCIATION_LABEL_TEXT_SELECTOR"
-                            }
-                        ],
-                        "attrs": {
-                            "ASSOCIATION_LABEL_TEXT_SELECTOR": {
-                                "text": "ONE_TO_ONE",
-                                "fill": "var(--common-color)",
-                                "fontWeight": "normal"
-                            },
-                            "body": {
-                                "ref": "ASSOCIATION_LABEL_TEXT_SELECTOR",
-                                "fill": "#f5f5f5"
-                            }
-                        }
-                    }
-                ],
+                "id": "aecf84a9-1b41-4617-a57b-4de48547bf7b",
                 "data": {
                     "association": {
                         "associationType": "ONE_TO_ONE",
                         "fake": false,
-                        "name": "fk_address_to_user",
+                        "name": "fk_user_address_user",
                         "sourceTable": {
                             "name": "user_address",
                             "comment": "用户地址"
@@ -396,12 +370,13 @@
                 },
                 "source": {
                     "cell": "b22de922-3082-435a-bf84-915cb1b1975e",
-                    "port": "50fb206a-8abe-4848-a22a-f787ba27a643"
+                    "port": "a061aa1b-cf06-43f5-8e24-012e6970df4c"
                 },
                 "target": {
                     "cell": "481a990d-6d38-4049-b896-8a79d523d5ec",
-                    "port": "5e08e449-202f-49bc-80bf-5d34b5233f2f"
-                }
+                    "port": "ea65275b-473a-486a-991b-6b06b60e1923"
+                },
+                "zIndex": 35
             }
         ]
     },

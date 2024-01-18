@@ -25,105 +25,6 @@
         "cells": [
             {
                 "position": {
-                    "x": 640,
-                    "y": 340
-                },
-                "size": {
-                    "width": 206,
-                    "height": 94
-                },
-                "view": "vue-shape-view",
-                "shape": "TABLE_NODE",
-                "id": "0af93104-4d36-4aab-9902-2625734c4056",
-                "data": {
-                    "table": {
-                        "name": "product",
-                        "comment": "产品",
-                        "remark": "",
-                        "orderKey": 0,
-                        "type": "TABLE",
-                        "columns": [
-                            {
-                                "orderKey": 1,
-                                "name": "id",
-                                "comment": "ID",
-                                "typeCode": -5,
-                                "overwriteByType": false,
-                                "type": "BIGINT",
-                                "typeNotNull": true,
-                                "displaySize": 0,
-                                "numericPrecision": 0,
-                                "partOfPk": true,
-                                "autoIncrement": true,
-                                "remark": "",
-                                "logicalDelete": false,
-                                "businessKey": false
-                            },
-                            {
-                                "orderKey": 2,
-                                "name": "name",
-                                "comment": "名称",
-                                "typeCode": 12,
-                                "overwriteByType": false,
-                                "type": "VARCHAR",
-                                "typeNotNull": true,
-                                "displaySize": 0,
-                                "numericPrecision": 0,
-                                "partOfPk": false,
-                                "autoIncrement": false,
-                                "remark": "",
-                                "logicalDelete": false,
-                                "businessKey": false
-                            }
-                        ],
-                        "indexes": []
-                    }
-                },
-                "zIndex": 19,
-                "ports": {
-                    "groups": {
-                        "COLUMN_PORT_GROUP": {
-                            "position": "COLUMN_PORT",
-                            "markup": [
-                                {
-                                    "tagName": "rect",
-                                    "selector": "COLUMN_PORT_SELECTOR"
-                                }
-                            ],
-                            "attrs": {
-                                "COLUMN_PORT_SELECTOR": {
-                                    "magnet": true,
-                                    "fill": "rgba(0,0,0,0)",
-                                    "height": 30,
-                                    "width": 200
-                                }
-                            }
-                        }
-                    },
-                    "items": [
-                        {
-                            "group": "COLUMN_PORT_GROUP",
-                            "id": "788a5f29-c96c-4a78-abea-08d79110ac16",
-                            "attrs": {
-                                "COLUMN_PORT_SELECTOR": {
-                                    "width": 206
-                                }
-                            }
-                        },
-                        {
-                            "group": "COLUMN_PORT_GROUP",
-                            "id": "e975110c-fb95-4760-a790-637c880d07d5",
-                            "attrs": {
-                                "COLUMN_PORT_SELECTOR": {
-                                    "width": 206
-                                }
-                            }
-                        }
-                    ]
-                }
-            },
-            {
-                "position": {
                     "x": 260,
                     "y": 340
                 },
@@ -150,7 +51,7 @@
                                 "overwriteByType": false,
                                 "type": "BIGINT",
                                 "typeNotNull": true,
-                                "displaySize": 0,
+                                "displaySize": 19,
                                 "numericPrecision": 0,
                                 "partOfPk": true,
                                 "autoIncrement": true,
@@ -166,7 +67,7 @@
                                 "overwriteByType": false,
                                 "type": "VARCHAR",
                                 "typeNotNull": true,
-                                "displaySize": 0,
+                                "displaySize": 500,
                                 "numericPrecision": 0,
                                 "partOfPk": false,
                                 "autoIncrement": false,
@@ -178,7 +79,7 @@
                         "indexes": []
                     }
                 },
-                "zIndex": 21,
+                "zIndex": 31,
                 "ports": {
                     "groups": {
                         "COLUMN_PORT_GROUP": {
@@ -202,7 +103,7 @@
                     "items": [
                         {
                             "group": "COLUMN_PORT_GROUP",
-                            "id": "8be08c3e-3f6e-4ba2-832b-0f220ae69f4d",
+                            "id": "d83fd9aa-6f32-4a51-afa2-b69b32992c1a",
                             "attrs": {
                                 "COLUMN_PORT_SELECTOR": {
                                     "width": 206
@@ -211,7 +112,106 @@
                         },
                         {
                             "group": "COLUMN_PORT_GROUP",
-                            "id": "5caece10-5f96-4039-a91f-e71190a894f3",
+                            "id": "61fa3c61-9774-45f7-bd53-602f0484f78e",
+                            "attrs": {
+                                "COLUMN_PORT_SELECTOR": {
+                                    "width": 206
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "position": {
+                    "x": 640,
+                    "y": 340
+                },
+                "size": {
+                    "width": 206,
+                    "height": 94
+                },
+                "view": "vue-shape-view",
+                "shape": "TABLE_NODE",
+                "id": "0af93104-4d36-4aab-9902-2625734c4056",
+                "data": {
+                    "table": {
+                        "name": "product",
+                        "comment": "产品",
+                        "remark": "",
+                        "orderKey": 0,
+                        "type": "TABLE",
+                        "columns": [
+                            {
+                                "orderKey": 1,
+                                "name": "id",
+                                "comment": "ID",
+                                "typeCode": -5,
+                                "overwriteByType": false,
+                                "type": "BIGINT",
+                                "typeNotNull": true,
+                                "displaySize": 19,
+                                "numericPrecision": 0,
+                                "partOfPk": true,
+                                "autoIncrement": true,
+                                "remark": "",
+                                "logicalDelete": false,
+                                "businessKey": false
+                            },
+                            {
+                                "orderKey": 2,
+                                "name": "name",
+                                "comment": "名称",
+                                "typeCode": 12,
+                                "overwriteByType": false,
+                                "type": "VARCHAR",
+                                "typeNotNull": true,
+                                "displaySize": 500,
+                                "numericPrecision": 0,
+                                "partOfPk": false,
+                                "autoIncrement": false,
+                                "remark": "",
+                                "logicalDelete": false,
+                                "businessKey": false
+                            }
+                        ],
+                        "indexes": []
+                    }
+                },
+                "zIndex": 37,
+                "ports": {
+                    "groups": {
+                        "COLUMN_PORT_GROUP": {
+                            "position": "COLUMN_PORT",
+                            "markup": [
+                                {
+                                    "tagName": "rect",
+                                    "selector": "COLUMN_PORT_SELECTOR"
+                                }
+                            ],
+                            "attrs": {
+                                "COLUMN_PORT_SELECTOR": {
+                                    "magnet": true,
+                                    "fill": "rgba(0,0,0,0)",
+                                    "height": 30,
+                                    "width": 200
+                                }
+                            }
+                        }
+                    },
+                    "items": [
+                        {
+                            "group": "COLUMN_PORT_GROUP",
+                            "id": "68918e5e-9d2e-491a-8848-6baafc0265cf",
+                            "attrs": {
+                                "COLUMN_PORT_SELECTOR": {
+                                    "width": 206
+                                }
+                            }
+                        },
+                        {
+                            "group": "COLUMN_PORT_GROUP",
+                            "id": "603250d0-c805-484d-8576-3a218d81df31",
                             "attrs": {
                                 "COLUMN_PORT_SELECTOR": {
                                     "width": 206
@@ -229,38 +229,12 @@
                         "direction": "H"
                     }
                 },
-                "id": "c9fbe5b6-eccc-4692-acb2-38b8d11fc954",
-                "zIndex": 22,
-                "labels": [
-                    {
-                        "markup": [
-                            {
-                                "tagName": "rect",
-                                "selector": "body"
-                            },
-                            {
-                                "tagName": "text",
-                                "selector": "ASSOCIATION_LABEL_TEXT_SELECTOR"
-                            }
-                        ],
-                        "attrs": {
-                            "ASSOCIATION_LABEL_TEXT_SELECTOR": {
-                                "text": "MANY_TO_MANY",
-                                "fill": "var(--common-color)",
-                                "fontWeight": "normal"
-                            },
-                            "body": {
-                                "ref": "ASSOCIATION_LABEL_TEXT_SELECTOR",
-                                "fill": "#f5f5f5"
-                            }
-                        }
-                    }
-                ],
+                "id": "be2bc885-3307-4849-9218-0e9d0294fa8f",
                 "data": {
                     "association": {
                         "associationType": "MANY_TO_MANY",
                         "fake": false,
-                        "name": "fk_factory_id_product_id",
+                        "name": "factory_product_mapping",
                         "sourceTable": {
                             "name": "factory",
                             "comment": "工厂"
@@ -289,12 +263,13 @@
                 },
                 "source": {
                     "cell": "619dca2a-560a-4185-9db2-d3619a042bd8",
-                    "port": "8be08c3e-3f6e-4ba2-832b-0f220ae69f4d"
+                    "port": "d83fd9aa-6f32-4a51-afa2-b69b32992c1a"
                 },
                 "target": {
                     "cell": "0af93104-4d36-4aab-9902-2625734c4056",
-                    "port": "788a5f29-c96c-4a78-abea-08d79110ac16"
-                }
+                    "port": "68918e5e-9d2e-491a-8848-6baafc0265cf"
+                },
+                "zIndex": 38
             }
         ]
     },
@@ -308,22 +283,22 @@
 此时将自然生产一张中间表与两个外键约束。
 
 ```sql
-CREATE TABLE `fk_factory_id_product_id` (
-    `factory_id` BIGINT(0) NOT NULL,
-    `product_id` BIGINT(0) NOT NULL
+CREATE TABLE `factory_product_mapping` (
+    `factory_id` BIGINT(19) NOT NULL,
+    `product_id` BIGINT(19) NOT NULL
 )
   ENGINE = InnoDB
   CHARACTER SET = utf8mb4
   COMMENT = '工厂与产品的映射关系表'
   ROW_FORMAT = Dynamic;
 
-ALTER TABLE `fk_factory_id_product_id` ADD CONSTRAINT `pk_fk_factory_id_product_id` PRIMARY KEY (`factory_id`,`product_id`);
+ALTER TABLE `factory_product_mapping` ADD CONSTRAINT `pk_factory_product_mapping` PRIMARY KEY (`factory_id`,`product_id`);
 
-ALTER TABLE `fk_factory_id_product_id` ADD CONSTRAINT `fk_factory_id_product_id_s` 
+ALTER TABLE `factory_product_mapping` ADD CONSTRAINT `factory_product_mapping_s` 
     FOREIGN KEY (`factory_id`)
   REFERENCES `factory` (`id`);
 
-ALTER TABLE `fk_factory_id_product_id` ADD CONSTRAINT `fk_factory_id_product_id_t` 
+ALTER TABLE `factory_product_mapping` ADD CONSTRAINT `factory_product_mapping_t` 
     FOREIGN KEY (`product_id`)
   REFERENCES `product` (`id`);
 ```
