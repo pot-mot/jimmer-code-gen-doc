@@ -48,8 +48,8 @@
                                 "name": "id",
                                 "comment": "ID",
                                 "typeCode": -5,
-                                "overwriteByType": false,
-                                "type": "BIGINT",
+                                "overwriteByRaw": false,
+                                "rawType": "BIGINT",
                                 "typeNotNull": true,
                                 "displaySize": 19,
                                 "numericPrecision": 0,
@@ -64,8 +64,8 @@
                                 "name": "name",
                                 "comment": "名称",
                                 "typeCode": 12,
-                                "overwriteByType": false,
-                                "type": "VARCHAR",
+                                "overwriteByRaw": false,
+                                "rawType": "VARCHAR",
                                 "typeNotNull": true,
                                 "displaySize": 500,
                                 "numericPrecision": 0,
@@ -147,8 +147,8 @@
                                 "name": "id",
                                 "comment": "ID",
                                 "typeCode": -5,
-                                "overwriteByType": false,
-                                "type": "BIGINT",
+                                "overwriteByRaw": false,
+                                "rawType": "BIGINT",
                                 "typeNotNull": true,
                                 "displaySize": 19,
                                 "numericPrecision": 0,
@@ -163,8 +163,8 @@
                                 "name": "name",
                                 "comment": "名称",
                                 "typeCode": 12,
-                                "overwriteByType": false,
-                                "type": "VARCHAR",
+                                "overwriteByRaw": false,
+                                "rawType": "VARCHAR",
                                 "typeNotNull": true,
                                 "displaySize": 500,
                                 "numericPrecision": 0,
@@ -232,9 +232,11 @@
                 "id": "be2bc885-3307-4849-9218-0e9d0294fa8f",
                 "data": {
                     "association": {
-                        "associationType": "MANY_TO_MANY",
+                        "type": "MANY_TO_MANY",
                         "fake": false,
                         "name": "factory_product_mapping",
+                        "updateAction": "",
+                        "deleteAction": "", 
                         "sourceTable": {
                             "name": "factory",
                             "comment": "工厂"
@@ -248,13 +250,13 @@
                                 "sourceColumn": {
                                     "name": "id",
                                     "comment": "ID",
-                                    "type": "BIGINT",
+                                    "rawType": "BIGINT",
                                     "typeCode": -5
                                 },
                                 "targetColumn": {
                                     "name": "id",
                                     "comment": "ID",
-                                    "type": "BIGINT",
+                                    "rawType": "BIGINT",
                                     "typeCode": -5
                                 }
                             }
