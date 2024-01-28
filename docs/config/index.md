@@ -1,31 +1,27 @@
 # 生成配置
 
-:::warning
-这一块具体区分近期会有调整，目前仅供参考
-:::
-
 ## 全局配置
 
 ![gen-config-dialog.png](/images/gen-config/gen-config-dialog.png)
 
-目前全局配置支持以上配置项，其中数据源类型、语言、默认包路径会影响新建模型，移除前后缀仅会发生在 table convert entity 这个过程中。
+目前全局配置支持以上配置项，将在模型新建时进行赋值。
 
-配置相关主要有以下部分：
+> 移除前后缀仅影响 table convert entity 中的名称转换以及外键和索引名称的默认生成。
 
-### [GenConfig.kt](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/kotlin/top/potmot/context/GenConfig.kt)
+配置相关主要有以下部分，均为基于 GenModel 衍生出的 DTO：
+
+- GenConfig
 
 基础生成配置，会在请求的当前线程中持续被获取。
 
 > 目前的实现就是一个基于当前线程 id 存储的 Map，具体请查看 [GenConfigContext.kt](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/kotlin/top/potmot/context/GenConfigContext.kt)。  
 > 如果这种实现存在问题请及时告知风险所在。
 
-### [GenConfigProperties.kt](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/kotlin/top/potmot/context/GenConfigProperties.kt)
+- GenConfigProperties
 
-属性入参，可残缺版的前者，用于进行 merge。
+全属性可残缺的 input，用于与配置进行 merge。
 
-> 为了避免维护大量属性的 set 操作，项目使用了反射进行属性装填，具体请查看 [Properties.kt](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/kotlin/top/potmot/utils/bean/Properties.kt)）
-
-### [GlobalGenConfig.kt](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/kotlin/top/potmot/config/GlobalGenConfig.kt)
+- GlobalGenConfig
 
 全局配置，为 ContextGenConfig 提供基础。上面的全局配置即是在修改它。
 

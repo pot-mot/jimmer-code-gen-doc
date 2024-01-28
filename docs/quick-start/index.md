@@ -5,9 +5,10 @@
 
 ## 直接基于 jar 启动
 
-快速体验本项目可以直接通过 [发行版](https://github.com/pot-mot/jimmer-code-gen-kotlin/releases) 的 jar 包直接启动本项目。
+- [github](https://github.com/pot-mot/jimmer-code-gen-kotlin/releases)
+- [gitee](https://gitee.com/run-around---whats-wrong/jimmer-code-gen-kotlin/releases)
 
-此时直接使用  `java -jar <JAR>` 即可启动项目，之后从浏览器访问 `localhost:port` 即可，默认端口 8080。
+前往 git 仓库 release 获取发行版 jar，使用  `java -jar <JAR>` 启动即可，之后从浏览器访问 `localhost:port` 即可，默认端口 8080。
 
 jar 默认以 h2 启动，所以不需要配置任何数据源，但仅使用内存启动，因此请及时导出 model，如有需要请自行通过命令行进行参数配置 [数据源](/source-start/index.html#数据源配置)。
 
@@ -161,4 +162,4 @@ val target: Target
 
 ![load-from-model.png](/images/quick-start/load-from-model.png)
 
-> 从模型导入则可以选择任何已经被持久化了的模型，包括当前模型
+从模型导入可以选择任何已经被持久化的模型，包括当前模型。

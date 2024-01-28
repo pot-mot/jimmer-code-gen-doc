@@ -19,8 +19,8 @@
 
 针对目标数据源实现以下两个类，并补充对应入口文件即可：
 
-- [ColumnTypeDefiner.kt](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/kotlin/top/potmot/core/database/generate/ColumnTypeDefiner.kt)
-    - [ColumnTypeDefine.kt](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/kotlin/top/potmot/core/database/generate/ColumnTypeDefine.kt) 入口文件
+- [ColumnTypeDefiner.kt](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/kotlin/top/potmot/core/database/generate/columnTypeDefiner/ColumnTypeDefiner.kt)
+    - [ColumnTypeDefine.kt](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/kotlin/top/potmot/core/database/generate/columnTypeDefiner/ColumnTypeDefine.kt) 入口文件
 - [TableDefineGenerator.kt](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/kotlin/top/potmot/core/database/generate/TableDefineGenerator.kt)
     - [TableDefineGenerate.kt](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/kotlin/top/potmot/core/database/generate/TableDefineGenerate.kt) 入口文件
 

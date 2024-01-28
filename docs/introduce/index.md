@@ -1,4 +1,6 @@
-<h1 style="font-size: 50px; padding-bottom: 20px;">Jimmer Code Gen</h1>
+<h1 style="font-size: 50px; padding-bottom: 20px;display: inline;">Jimmer Code Gen</h1>
+<span style="border-radius: 3px; background-color:#efefef;padding: 3px 5px;margin: 0 3px;">V0.0.4</span>
+<br>
 
 一款模型设计与代码生成工具，旨在快捷创建 [Jimmer](https://github.com/babyfish-ct/jimmer) 下的实体与关联。
 
@@ -35,7 +37,7 @@
 
 ## 依赖说明
 
-前后端项目均完全基于 Jimmer ORM 的持久化与前后端免对接实现，更多关于 Jimmer 本身的信息请参阅 [Jimmer 官方文档](https://babyfish-ct.github.io/jimmer/zh/)。
+前后端项目均完全基于 Jimmer ORM 的持久化与前后端免对接实现，更多关于 Jimmer 本身的信息请参阅 [Jimmer 官方文档](https://babyfish-ct.github.io/jimmer-doc/zh/)。
 
 除了 Jimmer 这一核心，本项目还使用了以下技术栈：
 

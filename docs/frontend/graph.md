@@ -2,7 +2,7 @@
 
 ## 响应式数据
 
-[reactiveState.ts](https://github.com/pot-mot/jimmer-code-gen-vue3/blob/multi_column_ref/src/components/global/graphEditor/common/reactiveState.ts)
+[reactiveState.ts](https://github.com/pot-mot/jimmer-code-gen-vue3/blob/multi_column_ref/src/components/global/graphEditor/data/reactiveState.ts)
 
 由于 AntV/X6 Graph 中的数据不具备响应式，导致在 Vue 中的开发体检不佳，因此补充了上面这个在图创建时监听各种事件，以达到让基本数据为响应式的 Hook。
 
@@ -16,7 +16,7 @@
 
 ## 复制粘贴
 
-[clipBoard.ts](https://github.com/pot-mot/jimmer-code-gen-vue3/blob/multi_column_ref/src/components/pages/ModelEditor/graph/data/clipBoard.ts)
+[clipBoard.ts](https://github.com/pot-mot/jimmer-code-gen-vue3/blob/multi_column_ref/src/components/pages/ModelEditor/graph/clipBoard.ts)
 
 快捷键是 【ctrl+c】（复制）、【ctrl+v】（粘贴）、【ctrl+x】（剪切）。
 
@@ -27,6 +27,7 @@
 ```typescript
 interface CopyData {
     tables: GenTableModelInput[],
+    optionsList?: TableLoadOptions[],
     associations: GenAssociationModelInput[],
     enums: GenModelInput_TargetOf_enums[]
 }
@@ -34,7 +35,7 @@ interface CopyData {
 
 [CopyData](https://github.com/pot-mot/jimmer-code-gen-vue3/blob/multi_column_ref/src/shape/CopyData.ts)
 
-在页面中选中表和关联复制得到的数据结构。
+在页面中选中表和关联复制得到的数据结构，其中 optionsList 是 table 除 DTO 以外的一些信息，与 table 混杂并不合适，因此独立出来。
 
 ### GraphData
 
@@ -70,7 +71,7 @@ ModelInput，即直接导出的 model.json。
 
 ## 布局
 
-[layoutByLevel.ts](https://github.com/pot-mot/jimmer-code-gen-vue3/blob/multi_column_ref/src/components/global/graphEditor/layout/layoutByLevel.ts)
+[layoutByLevel.ts](https://github.com/pot-mot/jimmer-code-gen-vue3/blob/multi_column_ref/src/components/global/graphEditor/layout/layoutByLevel.ts#L317)
 
 目前的布局实现较为简单，仅按照基本序遍历排出层级，目标是**尽可能整理出表间依赖关系**。
 
@@ -79,7 +80,7 @@ ModelInput，即直接导出的 model.json。
 :::warning
 ### 导入时的延迟
 
-[importTableIntoGraph](https://github.com/pot-mot/jimmer-code-gen-vue3/blob/multi_column_ref/src/components/pages/ModelEditor/store/ModelEditorStore.ts#L159)
+[importTableIntoGraph](https://github.com/pot-mot/jimmer-code-gen-vue3/blob/multi_column_ref/src/components/pages/ModelEditor/store/ModelEditorStore.ts#L243)
 
 目前在导入超过一张表时都会触发 layoutAndFit 这个操作，但节点与关联创建会消耗无法预估的时间。
 
@@ -88,19 +89,27 @@ ModelInput，即直接导出的 model.json。
 同上，如果有好的办法，欢迎 PR。
 
 ```typescript
-const importTableIntoGraph = async (tables: GenTableColumnsView[]) => {
+/**
+ * 导入表的基本函数，接收 tableView 并查询获得 association
+ */
+const loadTableViews = async (tables: GenTableColumnsView[]) => {
     const graph = _graph()
 
     const {nodes, edges} = await loadByTableViews(graph, tables)
 
-    setTimeout(() => {
-        if (nodes.length == 1) {
-            commonOperations.focus(nodes[0])
-        } else {
-            graph.resetSelection([...nodes, ...edges])
-            commonOperations.layoutAndFit()
-        }
-    }, 100 + nodes.length * 40)
+    debugStore.log('HISTORY', 'loadByTableViews', {nodes, edges})
+
+    await syncTimeout(100 + nodes.length * 30 + edges.length * 20)
+
+    if (nodes.length == 1) {
+        commonOperations.focus(nodes[0])
+    } else {
+        graph.resetSelection([...nodes.map(it => it.id), ...edges.map(it => it.id)])
+        commonOperations.layout()
+        commonOperations.fit()
+    }
+
+    return {nodes, edges}
 }
 ```
 :::

@@ -48,7 +48,7 @@ GenTableAssociationsView {
 }
 ```
 
-完整定义请参考 [DTO](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/dto/top/potmot/model/GenTable.dto)。
+完整定义请参考 [DTO 文件](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/dto/top/potmot/model/GenTable.dto#L55)。
 
 通过在表基本信息的基础上结合 in 与 out 两个方向的 association ，可以轻松获取 Table 所需要的全部信息。
 
@@ -68,21 +68,22 @@ Builder 内置了各种字符串化方法，在这个基础上进行扩展会相
 
 ## 列类型
 
-[ColumnTypeDefiner.kt](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/kotlin/top/potmot/core/database/generate/ColumnTypeDefiner.kt)
+[ColumnTypeDefiner.kt](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/kotlin/top/potmot/core/database/generate/columnTypeDefiner/ColumnTypeDefiner.kt)
 
-类型系统就并不简单了，每种数据库在类型设计上或多或少都有相当程度的差异，所以着手点就选择了 jdbc type 这个统一入口。
+类型系统并不简单，每种数据库在类型设计上或多或少都有相当程度的差异。本项目的类型系统标准选择了 jdbc type。
 
-通过精确控制 jdbc type 在该数据源中对参数的要求可以满足一些简单的类型翻译，而更多的部分就需要结合
+通过精确控制 jdbc type 在该数据源中对参数的要求可以满足一些简单的类型翻译，而更多的部分就需要结合以下三个层级去一同完成了。
 
-- overwriteByType（属性级别，以字面类型覆盖 jdbc type）
-- ColumnDefault（模型设计时，特定数据源类型下特定 jdbc type 列的默认值配置）
-- TypeMapping（转换实体时，特定数据源类型下特定 jdbc type 翻译为特定属性的映射配置）
+- GenColumn.overwriteByRaw（属性级别，以字面类型覆盖 jdbc type）
+- GenColumnDefault（模型设计时，特定数据源类型下特定 jdbc type 列的默认值配置）
+- GenTypeMapping（转换实体时，特定数据源类型下特定 jdbc type 翻译为特定属性的映射配置）
 
-这三者去一同完成了。
+## 标识符长度
 
-## 名称长度
-
-数据源对标识符往往带有长度约束，为了避免超出长度限制，项目内设有 [IdentifierFilter.kt](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/kotlin/top/potmot/utils/identifier/IdentifierFilter.kt) 这一长度限制器，将过长的名称的后缀转换成 Hash 值。
+数据源对标识符往往带有长度约束，为了避免超出长度限制，项目通过 [IdentifierFilter](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/kotlin/top/potmot/utils/identifier/IdentifierFilter.kt) 这一长度限制器进行规避。
 
 > Postgres 和 MySQL 长度限制均默认为 63，所以一般无需担心。
 
+经过 IdentifierFilter 处理，过长的标识符将被修改为 `<base name part> <md5 digest part>`，将过长标识符的一定长度后的部分截去，替换为长度限制内的加密后缀。
+
+这个过程并不发生在导入阶段，而是发生在代码生成过程中，所以模型中相关信息不会丢失。

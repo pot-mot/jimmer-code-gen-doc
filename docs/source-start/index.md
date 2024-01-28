@@ -111,9 +111,10 @@ CREATE SCHEMA jimmer_code_gen;
 
 ## 项目打包
 
-如果需要打包，在前端根目录下使用 `pnpm run build` 打包为 dist，放置于后端 resources 下，之后使用 bootJar 打包，最终产物将位于 `/build/libs` 下。
+如果需要打包，在前端根目录下使用 `pnpm run build` 打包为 dist，放置于后端 resources 下，之后使用 Gradle Tasks build `bootJar` 进行打包，最终打包好的 jar 将位于 `/build/libs` 下。
 
 默认静态资源路径已在 [application.yml](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/resources/application.yml) 中通过配置覆盖至 classpath:/dist，如有需要自行调整。
+
 ```yaml
 spring:
   web:

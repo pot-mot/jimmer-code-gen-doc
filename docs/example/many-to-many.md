@@ -21,262 +21,138 @@
 
 ```json
 {
-    "json": {
-        "cells": [
-            {
-                "position": {
-                    "x": 260,
-                    "y": 340
+    "tables": [
+        {
+            "name": "factory",
+            "comment": "工厂",
+            "remark": "",
+            "type": "TABLE",
+            "columns": [
+                {
+                    "orderKey": 1,
+                    "name": "id",
+                    "comment": "ID",
+                    "typeCode": -5,
+                    "overwriteByRaw": false,
+                    "rawType": "BIGINT",
+                    "typeNotNull": true,
+                    "dataSize": 19,
+                    "numericPrecision": 0,
+                    "partOfPk": true,
+                    "autoIncrement": true,
+                    "remark": "",
+                    "idGeneration": false,
+                    "logicalDelete": false,
+                    "businessKey": false
                 },
-                "size": {
-                    "width": 206,
-                    "height": 94
-                },
-                "view": "vue-shape-view",
-                "shape": "TABLE_NODE",
-                "id": "619dca2a-560a-4185-9db2-d3619a042bd8",
-                "data": {
-                    "table": {
-                        "name": "factory",
-                        "comment": "工厂",
-                        "remark": "",
-                        "orderKey": 0,
-                        "type": "TABLE",
-                        "columns": [
-                            {
-                                "orderKey": 1,
-                                "name": "id",
-                                "comment": "ID",
-                                "typeCode": -5,
-                                "overwriteByRaw": false,
-                                "rawType": "BIGINT",
-                                "typeNotNull": true,
-                                "displaySize": 19,
-                                "numericPrecision": 0,
-                                "partOfPk": true,
-                                "autoIncrement": true,
-                                "remark": "",
-                                "logicalDelete": false,
-                                "businessKey": false
-                            },
-                            {
-                                "orderKey": 2,
-                                "name": "name",
-                                "comment": "名称",
-                                "typeCode": 12,
-                                "overwriteByRaw": false,
-                                "rawType": "VARCHAR",
-                                "typeNotNull": true,
-                                "displaySize": 500,
-                                "numericPrecision": 0,
-                                "partOfPk": false,
-                                "autoIncrement": false,
-                                "remark": "",
-                                "logicalDelete": false,
-                                "businessKey": false
-                            }
-                        ],
-                        "indexes": []
-                    }
-                },
-                "zIndex": 31,
-                "ports": {
-                    "groups": {
-                        "COLUMN_PORT_GROUP": {
-                            "position": "COLUMN_PORT",
-                            "markup": [
-                                {
-                                    "tagName": "rect",
-                                    "selector": "COLUMN_PORT_SELECTOR"
-                                }
-                            ],
-                            "attrs": {
-                                "COLUMN_PORT_SELECTOR": {
-                                    "magnet": true,
-                                    "fill": "rgba(0,0,0,0)",
-                                    "height": 30,
-                                    "width": 200
-                                }
-                            }
-                        }
-                    },
-                    "items": [
-                        {
-                            "group": "COLUMN_PORT_GROUP",
-                            "id": "d83fd9aa-6f32-4a51-afa2-b69b32992c1a",
-                            "attrs": {
-                                "COLUMN_PORT_SELECTOR": {
-                                    "width": 206
-                                }
-                            }
-                        },
-                        {
-                            "group": "COLUMN_PORT_GROUP",
-                            "id": "61fa3c61-9774-45f7-bd53-602f0484f78e",
-                            "attrs": {
-                                "COLUMN_PORT_SELECTOR": {
-                                    "width": 206
-                                }
-                            }
-                        }
-                    ]
+                {
+                    "orderKey": 2,
+                    "name": "name",
+                    "comment": "名称",
+                    "typeCode": 12,
+                    "overwriteByRaw": false,
+                    "rawType": "VARCHAR",
+                    "typeNotNull": true,
+                    "dataSize": 500,
+                    "numericPrecision": 0,
+                    "partOfPk": false,
+                    "autoIncrement": false,
+                    "remark": "",
+                    "idGeneration": false,
+                    "logicalDelete": false,
+                    "businessKey": false
                 }
-            },
-            {
-                "position": {
-                    "x": 640,
-                    "y": 340
+            ],
+            "indexes": []
+        },
+        {
+            "name": "product",
+            "comment": "产品",
+            "remark": "",
+            "type": "TABLE",
+            "columns": [
+                {
+                    "orderKey": 1,
+                    "name": "id",
+                    "comment": "ID",
+                    "typeCode": -5,
+                    "overwriteByRaw": false,
+                    "rawType": "BIGINT",
+                    "typeNotNull": true,
+                    "dataSize": 19,
+                    "numericPrecision": 0,
+                    "partOfPk": true,
+                    "autoIncrement": true,
+                    "remark": "",
+                    "idGeneration": false,
+                    "logicalDelete": false,
+                    "businessKey": false
                 },
-                "size": {
-                    "width": 206,
-                    "height": 94
-                },
-                "view": "vue-shape-view",
-                "shape": "TABLE_NODE",
-                "id": "0af93104-4d36-4aab-9902-2625734c4056",
-                "data": {
-                    "table": {
-                        "name": "product",
-                        "comment": "产品",
-                        "remark": "",
-                        "orderKey": 0,
-                        "type": "TABLE",
-                        "columns": [
-                            {
-                                "orderKey": 1,
-                                "name": "id",
-                                "comment": "ID",
-                                "typeCode": -5,
-                                "overwriteByRaw": false,
-                                "rawType": "BIGINT",
-                                "typeNotNull": true,
-                                "displaySize": 19,
-                                "numericPrecision": 0,
-                                "partOfPk": true,
-                                "autoIncrement": true,
-                                "remark": "",
-                                "logicalDelete": false,
-                                "businessKey": false
-                            },
-                            {
-                                "orderKey": 2,
-                                "name": "name",
-                                "comment": "名称",
-                                "typeCode": 12,
-                                "overwriteByRaw": false,
-                                "rawType": "VARCHAR",
-                                "typeNotNull": true,
-                                "displaySize": 500,
-                                "numericPrecision": 0,
-                                "partOfPk": false,
-                                "autoIncrement": false,
-                                "remark": "",
-                                "logicalDelete": false,
-                                "businessKey": false
-                            }
-                        ],
-                        "indexes": []
-                    }
-                },
-                "zIndex": 37,
-                "ports": {
-                    "groups": {
-                        "COLUMN_PORT_GROUP": {
-                            "position": "COLUMN_PORT",
-                            "markup": [
-                                {
-                                    "tagName": "rect",
-                                    "selector": "COLUMN_PORT_SELECTOR"
-                                }
-                            ],
-                            "attrs": {
-                                "COLUMN_PORT_SELECTOR": {
-                                    "magnet": true,
-                                    "fill": "rgba(0,0,0,0)",
-                                    "height": 30,
-                                    "width": 200
-                                }
-                            }
-                        }
-                    },
-                    "items": [
-                        {
-                            "group": "COLUMN_PORT_GROUP",
-                            "id": "68918e5e-9d2e-491a-8848-6baafc0265cf",
-                            "attrs": {
-                                "COLUMN_PORT_SELECTOR": {
-                                    "width": 206
-                                }
-                            }
-                        },
-                        {
-                            "group": "COLUMN_PORT_GROUP",
-                            "id": "603250d0-c805-484d-8576-3a218d81df31",
-                            "attrs": {
-                                "COLUMN_PORT_SELECTOR": {
-                                    "width": 206
-                                }
-                            }
-                        }
-                    ]
+                {
+                    "orderKey": 2,
+                    "name": "name",
+                    "comment": "名称",
+                    "typeCode": 12,
+                    "overwriteByRaw": false,
+                    "rawType": "VARCHAR",
+                    "typeNotNull": true,
+                    "dataSize": 500,
+                    "numericPrecision": 0,
+                    "partOfPk": false,
+                    "autoIncrement": false,
+                    "remark": "",
+                    "idGeneration": false,
+                    "logicalDelete": false,
+                    "businessKey": false
                 }
+            ],
+            "indexes": []
+        }
+    ],
+    "associations": [
+        {
+            "type": "MANY_TO_MANY",
+            "fake": false,
+            "name": "factory_product_mapping",
+            "updateAction": "",
+            "deleteAction": "",
+            "sourceTable": {
+                "name": "factory",
+                "comment": "工厂"
             },
-            {
-                "shape": "ASSOCIATION_EDGE",
-                "router": {
-                    "name": "er",
-                    "args": {
-                        "direction": "H"
+            "targetTable": {
+                "name": "product",
+                "comment": "产品"
+            },
+            "columnReferences": [
+                {
+                    "sourceColumn": {
+                        "name": "id",
+                        "comment": "ID",
+                        "rawType": "BIGINT",
+                        "typeCode": -5
+                    },
+                    "targetColumn": {
+                        "name": "id",
+                        "comment": "ID",
+                        "rawType": "BIGINT",
+                        "typeCode": -5
                     }
-                },
-                "id": "be2bc885-3307-4849-9218-0e9d0294fa8f",
-                "data": {
-                    "association": {
-                        "type": "MANY_TO_MANY",
-                        "fake": false,
-                        "name": "factory_product_mapping",
-                        "updateAction": "",
-                        "deleteAction": "", 
-                        "sourceTable": {
-                            "name": "factory",
-                            "comment": "工厂"
-                        },
-                        "targetTable": {
-                            "name": "product",
-                            "comment": "产品"
-                        },
-                        "columnReferences": [
-                            {
-                                "sourceColumn": {
-                                    "name": "id",
-                                    "comment": "ID",
-                                    "rawType": "BIGINT",
-                                    "typeCode": -5
-                                },
-                                "targetColumn": {
-                                    "name": "id",
-                                    "comment": "ID",
-                                    "rawType": "BIGINT",
-                                    "typeCode": -5
-                                }
-                            }
-                        ]
-                    }
-                },
-                "source": {
-                    "cell": "619dca2a-560a-4185-9db2-d3619a042bd8",
-                    "port": "d83fd9aa-6f32-4a51-afa2-b69b32992c1a"
-                },
-                "target": {
-                    "cell": "0af93104-4d36-4aab-9902-2625734c4056",
-                    "port": "68918e5e-9d2e-491a-8848-6baafc0265cf"
-                },
-                "zIndex": 38
-            }
-        ]
-    },
-    "zoom": 1,
-    "transform": "matrix(1,0,0,1,-114,-17)"
+                }
+            ]
+        }
+    ],
+    "enums": [],
+    "optionsList": [
+        {
+            "x": 406,
+            "y": 0
+        },
+        {
+            "x": 0,
+            "y": 0
+        }
+    ]
 }
 ```
 </details>
@@ -286,8 +162,8 @@
 
 ```sql
 CREATE TABLE `factory_product_mapping` (
-    `factory_id` BIGINT(19) NOT NULL,
-    `product_id` BIGINT(19) NOT NULL
+    `factory_id` BIGINT NOT NULL,
+    `product_id` BIGINT NOT NULL
 )
   ENGINE = InnoDB
   CHARACTER SET = utf8mb4
@@ -298,11 +174,11 @@ ALTER TABLE `factory_product_mapping` ADD CONSTRAINT `pk_factory_product_mapping
 
 ALTER TABLE `factory_product_mapping` ADD CONSTRAINT `factory_product_mapping_s` 
     FOREIGN KEY (`factory_id`)
-  REFERENCES `factory` (`id`);
+        REFERENCES `factory` (`id`);
 
 ALTER TABLE `factory_product_mapping` ADD CONSTRAINT `factory_product_mapping_t` 
     FOREIGN KEY (`product_id`)
-  REFERENCES `product` (`id`);
+        REFERENCES `product` (`id`);
 ```
 
 而在属性层面自然就是一对 @ManyToMany，即对称的两组 List。
