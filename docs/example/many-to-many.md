@@ -41,7 +41,6 @@
                     "partOfPk": true,
                     "autoIncrement": true,
                     "remark": "",
-                    "idGeneration": false,
                     "logicalDelete": false,
                     "businessKey": false
                 },
@@ -58,7 +57,6 @@
                     "partOfPk": false,
                     "autoIncrement": false,
                     "remark": "",
-                    "idGeneration": false,
                     "logicalDelete": false,
                     "businessKey": false
                 }
@@ -84,7 +82,6 @@
                     "partOfPk": true,
                     "autoIncrement": true,
                     "remark": "",
-                    "idGeneration": false,
                     "logicalDelete": false,
                     "businessKey": false
                 },
@@ -101,7 +98,6 @@
                     "partOfPk": false,
                     "autoIncrement": false,
                     "remark": "",
-                    "idGeneration": false,
                     "logicalDelete": false,
                     "businessKey": false
                 }
@@ -172,13 +168,15 @@ CREATE TABLE `factory_product_mapping` (
 
 ALTER TABLE `factory_product_mapping` ADD CONSTRAINT `pk_factory_product_mapping` PRIMARY KEY (`factory_id`,`product_id`);
 
-ALTER TABLE `factory_product_mapping` ADD CONSTRAINT `factory_product_mapping_s` 
-    FOREIGN KEY (`factory_id`)
-        REFERENCES `factory` (`id`);
+ALTER TABLE `factory_product_mapping`
+    ADD CONSTRAINT `factory_product_mapping_s`
+        FOREIGN KEY (`factory_id`)
+            REFERENCES `factory` (`id`);
 
-ALTER TABLE `factory_product_mapping` ADD CONSTRAINT `factory_product_mapping_t` 
-    FOREIGN KEY (`product_id`)
-        REFERENCES `product` (`id`);
+ALTER TABLE `factory_product_mapping`
+    ADD CONSTRAINT `factory_product_mapping_t`
+        FOREIGN KEY (`product_id`)
+            REFERENCES `product` (`id`);
 ```
 
 而在属性层面自然就是一对 @ManyToMany，即对称的两组 List。

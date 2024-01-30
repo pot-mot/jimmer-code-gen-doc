@@ -37,7 +37,6 @@
                     "partOfPk": true,
                     "autoIncrement": true,
                     "remark": "",
-                    "idGeneration": false,
                     "logicalDelete": false,
                     "businessKey": false
                 },
@@ -54,7 +53,6 @@
                     "partOfPk": false,
                     "autoIncrement": false,
                     "remark": "",
-                    "idGeneration": false,
                     "logicalDelete": false,
                     "businessKey": false
                 },
@@ -71,7 +69,6 @@
                     "partOfPk": false,
                     "autoIncrement": false,
                     "remark": "",
-                    "idGeneration": false,
                     "logicalDelete": false,
                     "businessKey": false
                 },
@@ -88,7 +85,6 @@
                     "partOfPk": false,
                     "autoIncrement": false,
                     "remark": "",
-                    "idGeneration": false,
                     "logicalDelete": false,
                     "businessKey": false
                 }
@@ -114,7 +110,6 @@
                     "partOfPk": true,
                     "autoIncrement": true,
                     "remark": "",
-                    "idGeneration": false,
                     "logicalDelete": false,
                     "businessKey": false
                 },
@@ -131,7 +126,6 @@
                     "partOfPk": false,
                     "autoIncrement": false,
                     "remark": "",
-                    "idGeneration": false,
                     "logicalDelete": false,
                     "businessKey": false
                 },
@@ -148,7 +142,6 @@
                     "partOfPk": false,
                     "autoIncrement": false,
                     "remark": "",
-                    "idGeneration": false,
                     "logicalDelete": false,
                     "businessKey": false
                 }
@@ -229,9 +222,10 @@ val orderDetails: List<OrderDetail>
 
 而生成的外键即与模型一致，由 detail 指向 order：
 ```sql
-ALTER TABLE `order_detail` ADD CONSTRAINT `fk_detail_to_order` 
-    FOREIGN KEY (`order_id`)
-        REFERENCES `sale_order` (`id`);
+ALTER TABLE `order_detail`
+    ADD CONSTRAINT `fk_detail_to_order`
+        FOREIGN KEY (`order_id`)
+            REFERENCES `sale_order` (`id`);
 ```
 
 ## 班级和学生（一对多，主指向子）
@@ -263,7 +257,6 @@ ALTER TABLE `order_detail` ADD CONSTRAINT `fk_detail_to_order`
                     "partOfPk": true,
                     "autoIncrement": true,
                     "remark": "",
-                    "idGeneration": false,
                     "logicalDelete": false,
                     "businessKey": false
                 },
@@ -280,7 +273,6 @@ ALTER TABLE `order_detail` ADD CONSTRAINT `fk_detail_to_order`
                     "partOfPk": false,
                     "autoIncrement": false,
                     "remark": "",
-                    "idGeneration": false,
                     "logicalDelete": false,
                     "businessKey": false
                 },
@@ -297,7 +289,6 @@ ALTER TABLE `order_detail` ADD CONSTRAINT `fk_detail_to_order`
                     "partOfPk": false,
                     "autoIncrement": false,
                     "remark": "",
-                    "idGeneration": false,
                     "logicalDelete": false,
                     "businessKey": false
                 }
@@ -323,7 +314,6 @@ ALTER TABLE `order_detail` ADD CONSTRAINT `fk_detail_to_order`
                     "partOfPk": true,
                     "autoIncrement": true,
                     "remark": "",
-                    "idGeneration": false,
                     "logicalDelete": false,
                     "businessKey": false
                 },
@@ -340,7 +330,6 @@ ALTER TABLE `order_detail` ADD CONSTRAINT `fk_detail_to_order`
                     "partOfPk": false,
                     "autoIncrement": false,
                     "remark": "",
-                    "idGeneration": false,
                     "logicalDelete": false,
                     "businessKey": false
                 },
@@ -357,7 +346,6 @@ ALTER TABLE `order_detail` ADD CONSTRAINT `fk_detail_to_order`
                     "partOfPk": false,
                     "autoIncrement": false,
                     "remark": "",
-                    "idGeneration": false,
                     "logicalDelete": false,
                     "businessKey": false
                 },
@@ -374,7 +362,6 @@ ALTER TABLE `order_detail` ADD CONSTRAINT `fk_detail_to_order`
                     "partOfPk": false,
                     "autoIncrement": false,
                     "remark": "",
-                    "idGeneration": false,
                     "logicalDelete": false,
                     "businessKey": false
                 }
@@ -433,9 +420,10 @@ ALTER TABLE `order_detail` ADD CONSTRAINT `fk_detail_to_order`
 此时关联类型为一对多，但是本质还是多对一映射，因此生成的外键为 student 指向 class：
 
 ```sql
-ALTER TABLE `edu_student` ADD CONSTRAINT `fk_edu_student_edu_class` 
-    FOREIGN KEY (`class_id`)
-        REFERENCES `edu_class` (`id`);
+ALTER TABLE `edu_student`
+    ADD CONSTRAINT `fk_edu_student_edu_class`
+        FOREIGN KEY (`class_id`)
+            REFERENCES `edu_class` (`id`);
 ```
 
 生成的属性也和上面的多对一没有本质差异

@@ -37,7 +37,6 @@
                     "partOfPk": true,
                     "autoIncrement": true,
                     "remark": "",
-                    "idGeneration": false,
                     "logicalDelete": false,
                     "businessKey": false
                 },
@@ -54,7 +53,6 @@
                     "partOfPk": false,
                     "autoIncrement": false,
                     "remark": "",
-                    "idGeneration": false,
                     "logicalDelete": false,
                     "businessKey": false
                 },
@@ -71,7 +69,6 @@
                     "partOfPk": false,
                     "autoIncrement": false,
                     "remark": "",
-                    "idGeneration": false,
                     "logicalDelete": false,
                     "businessKey": false
                 },
@@ -88,7 +85,6 @@
                     "partOfPk": false,
                     "autoIncrement": false,
                     "remark": "",
-                    "idGeneration": false,
                     "logicalDelete": false,
                     "businessKey": false
                 },
@@ -105,7 +101,6 @@
                     "partOfPk": false,
                     "autoIncrement": false,
                     "remark": "",
-                    "idGeneration": false,
                     "logicalDelete": false,
                     "businessKey": false
                 },
@@ -122,7 +117,6 @@
                     "partOfPk": false,
                     "autoIncrement": false,
                     "remark": "",
-                    "idGeneration": false,
                     "logicalDelete": false,
                     "businessKey": false
                 }
@@ -159,7 +153,6 @@
                     "partOfPk": true,
                     "autoIncrement": true,
                     "remark": "",
-                    "idGeneration": false,
                     "logicalDelete": false,
                     "businessKey": false
                 },
@@ -176,7 +169,6 @@
                     "partOfPk": false,
                     "autoIncrement": false,
                     "remark": "",
-                    "idGeneration": false,
                     "logicalDelete": false,
                     "businessKey": false
                 }
@@ -238,9 +230,10 @@
 ```sql
 CREATE UNIQUE INDEX `uidx_address_user` ON `user_address` (`user_id`);
 
-ALTER TABLE `user_address` ADD CONSTRAINT `fk_user_address_user` 
-    FOREIGN KEY (`user_id`)
-        REFERENCES `user` (`id`);
+ALTER TABLE `user_address`
+    ADD CONSTRAINT `fk_user_address_user`
+        FOREIGN KEY (`user_id`)
+            REFERENCES `user` (`id`);
 ```
 
 而表现在实体层面则就是一对 @OneToOne 属性。
