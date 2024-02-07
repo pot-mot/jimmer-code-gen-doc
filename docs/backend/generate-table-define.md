@@ -68,7 +68,7 @@ Builder 内置了各种字符串化方法，在这个基础上进行扩展会相
 
 ## 列类型
 
-[ColumnTypeDefiner.kt](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/kotlin/top/potmot/core/database/generate/columnTypeDefiner/ColumnTypeDefiner.kt)
+[ColumnTypeDefiner.kt](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/kotlin/top/potmot/core/database/generate/columnType/ColumnTypeDefiner.kt)
 
 类型系统并不简单，每种数据库在类型设计上或多或少都有相当程度的差异。本项目的类型系统标准选择了 jdbc type。
 
@@ -80,7 +80,7 @@ Builder 内置了各种字符串化方法，在这个基础上进行扩展会相
 
 ## 标识符长度
 
-数据源对标识符往往带有长度约束，为了避免超出长度限制，项目通过 [IdentifierFilter](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/kotlin/top/potmot/utils/identifier/IdentifierFilter.kt) 这一长度限制器进行规避。
+数据源对标识符往往带有长度约束，为了避免超出长度限制，项目通过 [IdentifierFilter.kt](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/kotlin/top/potmot/core/database/generate/identifier/IdentifierFilter.kt) 这一长度限制器进行规避。
 
 > Postgres 和 MySQL 长度限制均默认为 63，所以一般无需担心。
 

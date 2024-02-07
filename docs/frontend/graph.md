@@ -80,7 +80,7 @@ ModelInput，即直接导出的 model.json。
 :::warning
 ### 导入时的延迟
 
-[importTableIntoGraph](https://github.com/pot-mot/jimmer-code-gen-vue3/blob/multi_column_ref/src/components/pages/ModelEditor/store/ModelEditorStore.ts#L243)
+[importTableIntoGraph](https://github.com/pot-mot/jimmer-code-gen-vue3/blob/multi_column_ref/src/components/pages/ModelEditor/store/ModelEditorStore.ts#L193)
 
 目前在导入超过一张表时都会触发 layoutAndFit 这个操作，但节点与关联创建会消耗无法预估的时间。
 
