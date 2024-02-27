@@ -441,8 +441,8 @@ val eduStudents: List<EduStudent>
  */
 @ManyToOne
 @JoinColumn(
-    name = "id",
-    referencedColumnName = "class_id"
+    name = "class_id",
+    referencedColumnName = "id"
 )
 val eduClass: EduClass
 ```
