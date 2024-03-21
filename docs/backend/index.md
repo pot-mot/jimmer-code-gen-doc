@@ -16,6 +16,6 @@ Entity 系列实体：
 
 ## 核心代码索引
 
-导入相关参见 [DataSourceLoad](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/kotlin/top/potmot/core/database/load/DataSourceLoad.kt) 和 [ModelLoad](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/kotlin/top/potmot/core/database/load/ModelLoad.kt)。
+导入相关参见 [DataSourceLoad](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/main/src/main/kotlin/top/potmot/core/database/load/DataSourceLoad.kt) 和 [ModelLoad](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/main/src/main/kotlin/top/potmot/core/database/load/ModelLoad.kt)。
 
-转换参见 [Convert](https://github.com/pot-mot/jimmer-code-gen-kotlin/tree/multi_columns_ref/src/main/kotlin/top/potmot/core/entity/convert)
+转换参见 [Convert](https://github.com/pot-mot/jimmer-code-gen-kotlin/tree/main/src/main/kotlin/top/potmot/core/entity/convert)

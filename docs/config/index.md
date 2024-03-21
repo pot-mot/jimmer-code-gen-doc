@@ -14,7 +14,7 @@
 
 基础生成配置，会在请求的当前线程中持续被获取。
 
-> 目前的实现就是一个基于当前线程 id 存储的 Map，具体请查看 [GenConfigContext.kt](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/kotlin/top/potmot/context/GenConfigContext.kt)。  
+> 目前的实现就是一个基于当前线程 id 存储的 Map，具体请查看 [GenConfigContext.kt](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/main/src/main/kotlin/top/potmot/context/GenConfigContext.kt)。  
 > 如果这种实现存在问题请及时告知风险所在。
 
 - GenConfigProperties
@@ -29,13 +29,13 @@
 
 ![type-mapping-dialog.png](/images/gen-config/type-mapping-dialog.png)
 
-[GenTypeMapping 实体](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/kotlin/top/potmot/model/GenTypeMapping.kt)
+[GenTypeMapping 实体](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/main/src/main/kotlin/top/potmot/model/GenTypeMapping.kt)
 
-[列到属性的基本类型转换实现](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/kotlin/top/potmot/core/entity/convert/ColumnPropertyTypeMapping.kt)
+[列到属性的基本类型转换实现](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/main/src/main/kotlin/top/potmot/core/entity/convert/ColumnPropertyTypeMapping.kt)
 
 基础类型的映射将基于 TypeMapping 进行搜寻，若没有找到则基于 JDBC 类型根据 Map 映射基本类型，最后都没有找到则直接返回字面类型。
 
-[关联属性转换](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/kotlin/top/potmot/core/entity/convert/AssociationPropertyConvert.kt)
+[关联属性转换](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/main/src/main/kotlin/top/potmot/core/entity/convert/AssociationPropertyConvert.kt)
 
 关联属性则会基于 typeTable.name 转换出对应的类名。
 
@@ -45,7 +45,7 @@
 
 ![column-default-dialog.png](/images/gen-config/column-default-dialog.png)
 
-[GenColumnDefault 实体](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/kotlin/top/potmot/model/GenColumnDefault.kt)
+[GenColumnDefault 实体](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/main/src/main/kotlin/top/potmot/model/GenColumnDefault.kt)
 
 [前端 Editor 和 Store](https://github.com/pot-mot/jimmer-code-gen-vue3/tree/multi_column_ref/src/components/business/columnDefault)
 

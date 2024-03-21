@@ -35,9 +35,9 @@ GenEntityPropertiesView {
 之所以选择这样一个方向进行转换而不是从实体提取，是因为关联注解中的信息完全依赖表的数据，而反向解析将困难许多。
 
 具体实现思路如下：
-- 转换 Table -> Entity，得到基本的实体。具体详见 [TableEntityConvert](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/kotlin/top/potmot/core/entity/convert/TableEntityConvert.kt)。
-- 转换一般的 Column -> Property，得到基本的属性。具体详见 [BasePropertyConvert](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/kotlin/top/potmot/core/entity/convert/BasePropertyConvert.kt)。
-- 基于 Association 等额外信息，将 BaseProperty 转换为 AssociationProperty、IdView。具体详见 [AssociationPropertyConvert](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/kotlin/top/potmot/core/entity/convert/AssociationPropertyConvert.kt)。
+- 转换 Table -> Entity，得到基本的实体。具体详见 [TableEntityConvert](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/main/src/main/kotlin/top/potmot/core/entity/convert/TableEntityConvert.kt)。
+- 转换一般的 Column -> Property，得到基本的属性。具体详见 [BasePropertyConvert](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/main/src/main/kotlin/top/potmot/core/entity/convert/BasePropertyConvert.kt)。
+- 基于 Association 等额外信息，将 BaseProperty 转换为 AssociationProperty、IdView。具体详见 [AssociationPropertyConvert](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/main/src/main/kotlin/top/potmot/core/entity/convert/AssociationPropertyConvert.kt)。
 
 ## Service 和 Controller
 

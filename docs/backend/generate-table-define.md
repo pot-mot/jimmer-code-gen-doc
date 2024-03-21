@@ -48,19 +48,19 @@ GenTableAssociationsView {
 }
 ```
 
-完整定义请参考 [DTO 文件](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/dto/top/potmot/model/GenTable.dto#L55)。
+完整定义请参考 [DTO 文件](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/main/src/main/dto/top/potmot/model/GenTable.dto#L55)。
 
 通过在表基本信息的基础上结合 in 与 out 两个方向的 association ，可以轻松获取 Table 所需要的全部信息。
 
 ## 表定义
 
-[TableDefineGenerator.kt](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/kotlin/top/potmot/core/database/generate/TableDefineGenerator.kt)
+[TableDefineGenerator.kt](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/main/src/main/kotlin/top/potmot/core/database/generate/TableDefineGenerator.kt)
 
 生成 TableDefine 本质就是将 Table 内的信息翻译成 DDL 字符串，是个相对纯粹的体力活。
 
 因为不同数据库的 DDL 或多或少有些差异，所以需要这样一个抽象类作为入口，而令特定数据源去实现。
 
-[TableDefineBuilder](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/kotlin/top/potmot/core/database/generate/builder/TableDefineBuilder.kt)
+[TableDefineBuilder](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/main/src/main/kotlin/top/potmot/core/database/generate/builder/TableDefineBuilder.kt)
 
 减少额外体力活的工具就是 Builder 这个字符串拼接工具。
 
@@ -68,7 +68,7 @@ Builder 内置了各种字符串化方法，在这个基础上进行扩展会相
 
 ## 列类型
 
-[ColumnTypeDefiner.kt](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/kotlin/top/potmot/core/database/generate/columnType/ColumnTypeDefiner.kt)
+[ColumnTypeDefiner.kt](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/main/src/main/kotlin/top/potmot/core/database/generate/columnType/ColumnTypeDefiner.kt)
 
 类型系统并不简单，每种数据库在类型设计上或多或少都有相当程度的差异。本项目的类型系统标准选择了 jdbc type。
 
@@ -80,7 +80,7 @@ Builder 内置了各种字符串化方法，在这个基础上进行扩展会相
 
 ## 标识符长度
 
-数据源对标识符往往带有长度约束，为了避免超出长度限制，项目通过 [IdentifierFilter.kt](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/multi_columns_ref/src/main/kotlin/top/potmot/core/database/generate/identifier/IdentifierFilter.kt) 这一长度限制器进行规避。
+数据源对标识符往往带有长度约束，为了避免超出长度限制，项目通过 [IdentifierFilter.kt](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/main/src/main/kotlin/top/potmot/core/database/generate/identifier/IdentifierFilter.kt) 这一长度限制器进行规避。
 
 > Postgres 和 MySQL 长度限制均默认为 63，所以一般无需担心。
 
