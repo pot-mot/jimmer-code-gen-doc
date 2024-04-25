@@ -2,7 +2,9 @@
 
 ## EntityPropertiesView
 
-实体生成的基础就是 EntityPropertiesView 这个超级聚合根。
+实体生成的基础是 EntityPropertiesView 这个 DTO。
+
+以下为简化的形状表示：
 
 ```
 GenEntityPropertiesView {
@@ -26,7 +28,9 @@ GenEntityPropertiesView {
 }
 ```
 
-与 TableAssociationsView 一样，这里具有了全部生成实体与枚举的信息。
+完整定义请参考 [DTO 文件](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/main/src/main/dto/top/potmot/model/GenEntity.dto#L6)。
+
+与 TableAssociationsView 一样，这里具有全部用于生成实体与枚举的信息。
 
 ## Convert Table to Entity
 
@@ -41,10 +45,8 @@ GenEntityPropertiesView {
 
 ## Service 和 Controller
 
-目前项目里 Service 和 Controller 还没有提供，且短期内（Jimmer 下 web 项目结构最佳实践出现之前）应该都不会去实现。
+目前项目并不提供 Service 和 Controller 的生成，且短期内不会去实现。
 
 因为强业务相关的这些部分在不同项目基础和需求下会有很大的差异性，由模型设计器提供相对鸡肋，使用价值不高。
-
-并且，在 Jimmer 强大的持久化和前后端免对接功能的加持下，其实仅保留一层业务层可能会是更明确的做法，包括本项目也采用了这样的实现方式。
 
 所以这一块如有生成的需要，请按照项目实际需要自行补充。
