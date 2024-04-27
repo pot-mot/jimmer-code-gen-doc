@@ -6,6 +6,8 @@
 
 但注意，一对一关联需要对外键列添加唯一约束来保证数据源层面数据关系的安全性。
 
+> 可直接复制 entities.json 至模型设计器中。
+
 ## 用户和用户地址
 
 ![user-to-address.png](/images/one-to-one/user-to-address.png)
@@ -13,7 +15,7 @@
 ![user_address-detail.png](/images/one-to-one/user_address-detail.png)
 
 <details>
-    <summary>GraphData.json</summary>
+    <summary>entities.json</summary>
 
 ```json
 {
@@ -23,6 +25,7 @@
             "comment": "用户地址",
             "remark": "",
             "type": "TABLE",
+            "superTables": [],
             "columns": [
                 {
                     "orderKey": 1,
@@ -139,6 +142,7 @@
             "comment": "用户",
             "remark": "",
             "type": "TABLE",
+            "superTables": [],
             "columns": [
                 {
                     "orderKey": 1,
@@ -183,28 +187,12 @@
             "name": "fk_user_address_user",
             "updateAction": "",
             "deleteAction": "",
-            "sourceTable": {
-                "name": "user_address",
-                "comment": "用户地址"
-            },
-            "targetTable": {
-                "name": "user",
-                "comment": "用户"
-            },
+            "sourceTableName": "user_address",
+            "targetTableName": "user",
             "columnReferences": [
                 {
-                    "sourceColumn": {
-                        "name": "user_id",
-                        "comment": "用户",
-                        "rawType": "BIGINT",
-                        "typeCode": -5
-                    },
-                    "targetColumn": {
-                        "name": "id",
-                        "comment": "ID",
-                        "rawType": "BIGINT",
-                        "typeCode": -5
-                    }
+                    "sourceColumnName": "user_id",
+                    "targetColumnName": "id"
                 }
             ],
             "dissociateAction": "DELETE"

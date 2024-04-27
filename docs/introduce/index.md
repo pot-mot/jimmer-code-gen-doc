@@ -1,5 +1,5 @@
 <h1 style="font-size: 50px; padding-bottom: 20px;display: inline;">Jimmer Code Gen</h1>
-<span style="border-radius: 3px; background-color:#efefef;padding: 3px 5px;margin: 0 3px;">V0.1.0</span>
+<span style="border-radius: 5px; background-color:#efefef;padding: 5px 10px;margin: 0 10px;font-size: 20px;">V 0.1.1</span>
 <br>
 
 一款模型设计与代码生成工具，旨在快捷创建 [Jimmer](https://github.com/babyfish-ct/jimmer) 下的实体与关联。

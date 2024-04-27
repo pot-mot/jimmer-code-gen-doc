@@ -6,14 +6,16 @@
 
 在数据模型层面，这条关联会表现为由**子实体的外键列**指向**主实体的主键列**的外键约束。而在模型层面，这条关联自然可以反向存在。
 
-下面就对多对一和一对多这对反转的关联进行简单的建模演示，可自行复制 GraphData.json 到模型设计器中进行复现：
+下面就对多对一和一对多这对反转的关联进行简单的建模演示。
+
+> 可直接复制 entities.json 至模型设计器中。
 
 ## 订单与订单明细（多对一，子指向主）
 
 ![detail-to-order.png](/images/many-to-one/detail-to-order.png)
 
 <details>
-    <summary>GraphData.json</summary>
+    <summary>entities.json</summary>
 
 ```json
 {
@@ -23,6 +25,7 @@
             "comment": "订单明细",
             "remark": "",
             "type": "TABLE",
+            "superTables": [],
             "columns": [
                 {
                     "orderKey": 1,
@@ -96,6 +99,7 @@
             "comment": "订单",
             "remark": "",
             "type": "TABLE",
+            "superTables": [],
             "columns": [
                 {
                     "orderKey": 1,
@@ -156,28 +160,12 @@
             "name": "fk_detail_to_order",
             "updateAction": "",
             "deleteAction": "",
-            "sourceTable": {
-                "name": "order_detail",
-                "comment": "订单明细"
-            },
-            "targetTable": {
-                "name": "sale_order",
-                "comment": "订单"
-            },
+            "sourceTableName": "order_detail",
+            "targetTableName": "sale_order",
             "columnReferences": [
                 {
-                    "sourceColumn": {
-                        "name": "order_id",
-                        "comment": "订单 ID",
-                        "rawType": "BIGINT",
-                        "typeCode": -5
-                    },
-                    "targetColumn": {
-                        "name": "id",
-                        "comment": "ID",
-                        "rawType": "BIGINT",
-                        "typeCode": -5
-                    }
+                    "sourceColumnName": "order_id",
+                    "targetColumnName": "id"
                 }
             ],
             "dissociateAction": "DELETE"
@@ -233,7 +221,7 @@ ALTER TABLE `order_detail`
 ![class-to-student.png](/images/many-to-one/class-to-student.png)
 
 <details>
-    <summary>GraphData.json</summary>
+    <summary>entities.json</summary>
     
 ```json
 {
@@ -243,6 +231,7 @@ ALTER TABLE `order_detail`
             "comment": "班级",
             "remark": "",
             "type": "TABLE",
+            "superTables": [],
             "columns": [
                 {
                     "orderKey": 1,
@@ -300,6 +289,7 @@ ALTER TABLE `order_detail`
             "comment": "学生",
             "remark": "",
             "type": "TABLE",
+            "superTables": [],
             "columns": [
                 {
                     "orderKey": 1,
@@ -376,28 +366,12 @@ ALTER TABLE `order_detail`
             "name": "fk_edu_student_edu_class",
             "updateAction": "",
             "deleteAction": "",
-            "sourceTable": {
-                "name": "edu_class",
-                "comment": "班级"
-            },
-            "targetTable": {
-                "name": "edu_student",
-                "comment": "学生"
-            },
+            "sourceTableName": "edu_class",
+            "targetTableName": "edu_student",
             "columnReferences": [
                 {
-                    "sourceColumn": {
-                        "name": "id",
-                        "comment": "ID",
-                        "rawType": "BIGINT",
-                        "typeCode": -5
-                    },
-                    "targetColumn": {
-                        "name": "class_id",
-                        "comment": "班级",
-                        "rawType": "BIGINT",
-                        "typeCode": -5
-                    }
+                    "sourceColumnName": "id",
+                    "targetColumnName": "class_id"
                 }
             ]
         }

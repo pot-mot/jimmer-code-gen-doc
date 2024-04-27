@@ -10,6 +10,8 @@
 
 （当有额外存储需要，例如变更时间时，则必须要显式创建中间表并创建两条 ManyToOne 关联。更多内容请参考 Jimmer 的 [ManyToManyView](https://babyfish-ct.gitee.io/jimmer-doc/docs/mapping/advanced/view/many-to-many-view/) 这个功能）
 
+> 可直接复制 entities.json 至模型设计器中。
+
 ## 厂家与产品
 
 厂家不止生产一种产品，一种产品也不止由一家工厂生产，这自然是一个标准的多对多关系。
@@ -17,7 +19,7 @@
 ![factory-to-product.png](/images/many-to-many/factory-to-product.png)
 
 <details>
-    <summary>GraphData.json</summary>
+    <summary>entities.json</summary>
 
 ```json
 {
@@ -27,6 +29,7 @@
             "comment": "工厂",
             "remark": "",
             "type": "TABLE",
+            "superTables": [],
             "columns": [
                 {
                     "orderKey": 1,
@@ -68,6 +71,7 @@
             "comment": "产品",
             "remark": "",
             "type": "TABLE",
+            "superTables": [],
             "columns": [
                 {
                     "orderKey": 1,
@@ -112,28 +116,12 @@
             "name": "factory_product_mapping",
             "updateAction": "",
             "deleteAction": "",
-            "sourceTable": {
-                "name": "factory",
-                "comment": "工厂"
-            },
-            "targetTable": {
-                "name": "product",
-                "comment": "产品"
-            },
+            "sourceTableName": "factory",
+            "targetTableName": "product",
             "columnReferences": [
                 {
-                    "sourceColumn": {
-                        "name": "id",
-                        "comment": "ID",
-                        "rawType": "BIGINT",
-                        "typeCode": -5
-                    },
-                    "targetColumn": {
-                        "name": "id",
-                        "comment": "ID",
-                        "rawType": "BIGINT",
-                        "typeCode": -5
-                    }
+                    "sourceColumnName": "id",
+                    "targetColumnName": "id"
                 }
             ]
         }
