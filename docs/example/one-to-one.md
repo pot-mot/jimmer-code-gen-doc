@@ -6,7 +6,7 @@
 
 但注意，一对一关联需要对外键列添加唯一约束来保证数据源层面数据关系的安全性。
 
-> 可直接复制 entities.json 至模型设计器中。
+> 可直接复制 data.json 至模型设计器中。
 
 ## 用户和用户地址
 
@@ -15,7 +15,7 @@
 ![user_address-detail.png](/images/one-to-one/user_address-detail.png)
 
 <details>
-    <summary>entities.json</summary>
+    <summary>data.json</summary>
 
 ```json
 {
