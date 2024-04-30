@@ -1,4 +1,6 @@
-export default {
+import { defineConfig } from 'vitepress'
+
+export default defineConfig({
     title: 'Jimmer Code Gen',
     description: '旨在快捷创建 Jimmer 下实体与关联',
     base: '/jimmer-code-gen-doc/',
@@ -13,13 +15,20 @@ export default {
     lastUpdated: true,
 
     themeConfig: {
+        search: {
+            provider: 'local'
+        },
+
         logo: '/logo.svg',
 
-        lastUpdatedText: 'Last edit time',
+        lastUpdated: {
+            text: 'Last edit time'
+        },
 
-        outline: [2, 4],
-
-        outlineTitle: 'Outline',
+        outline: {
+            label: 'Outline',
+            level: [2, 4]
+        },
 
         docFooter: {prev: 'prev', next: 'next'},
 
@@ -99,4 +108,4 @@ export default {
             },
         ],
     }
-}
+})
