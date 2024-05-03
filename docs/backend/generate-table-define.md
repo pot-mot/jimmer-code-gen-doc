@@ -40,7 +40,7 @@ GenTableAssociationsView {
 }
 ```
 
-完整定义请参考 [DTO 文件](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/main/src/main/dto/top/potmot/model/GenTable.dto#L73)。
+完整定义请参考 [DTO 文件](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/main/src/main/dto/top/potmot/core/GenTable.dto)。
 
 此处具有全部用于生成表定义的信息。
 

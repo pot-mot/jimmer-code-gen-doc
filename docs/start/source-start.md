@@ -1,6 +1,6 @@
 # 源码启动
 
-项目是标准的 web 项目，所以一切按照常规流程即可。
+项目是标准的 web 前后端分离式项目，单独加载依赖并运行即可。
 
 ## 克隆项目
 
@@ -97,7 +97,7 @@ CREATE SCHEMA jimmer_code_gen;
 
 运行 `src/main/kotlin/top/potmot/JimmerCodeGenApplication.kt` 的 main 方法，启动后端项目。
 
-在后端项目启动成功后，在前端项目根目录下执行 `pnpm run dev` 命令启动前端项目。
+在后端项目启动成功后，在前端项目根目录下执行 `pnpm dev` 命令启动前端项目。
 
 :::warning
 请务必在后端项目完全启动后再运行前端，因为前端项目启动需要从后端获取 gen config 、type mapping 等基础配置信息。
@@ -107,11 +107,11 @@ CREATE SCHEMA jimmer_code_gen;
 
 后端端口通过配置 [application.yml](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/main/src/main/resources/application.yml) 中的 `server.port` 进行修改，默认为 8080。
 
-前端端口通过配置 [vite.config.ts](https://github.com/pot-mot/jimmer-code-gen-vue3/blob/multi_column_ref/vite.config.ts) 中的 `server.port` 进行修改，默认为 4000。
+前端端口通过配置 [vite.config.ts](https://github.com/pot-mot/jimmer-code-gen-vue3/blob/main/vite.config.ts#L14) 的 `server.port` 进行修改，默认为 4000。
 
 ## 项目打包
 
-如果需要打包，在前端根目录下使用 `pnpm run build` 打包为 dist，放置于后端 resources 下，之后使用 Gradle Tasks build `bootJar` 进行打包，最终打包好的 jar 将位于 `/build/libs` 下。
+如果需要打包，在前端根目录下使用 `pnpm build` 打包为 dist，放置于后端 resources 下，之后使用 Gradle Tasks build `bootJar` 进行打包，最终打包好的 jar 将位于 `/build/libs` 下。
 
 默认静态资源路径已在 [application.yml](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/main/src/main/resources/application.yml) 中通过配置覆盖至 classpath:/dist，如有需要自行调整。
 

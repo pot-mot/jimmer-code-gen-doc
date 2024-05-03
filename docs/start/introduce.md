@@ -2,13 +2,20 @@
 <span style="border-radius: 5px; background-color:#efefef;padding: 5px 10px;margin: 0 10px;font-size: 20px;">V 0.1.1</span>
 <br>
 
-一款模型设计与代码生成工具，旨在快捷创建 [Jimmer](https://github.com/babyfish-ct/jimmer) 下的实体与关联。
+一款实体模型设计与代码生成工具，旨在快捷创建 [Jimmer](https://github.com/babyfish-ct/jimmer) 下的实体与关联。
 
 实现了：
 - 可视化的设计数据库关联模型
 - 转化关联模型为 jimmer 实体
 
 本项目不预设任何使用环境，因此如需要结合真实项目调整实体类、生成业务类和 UI，欢迎 fork 本项目进行二次开发。
+
+## 项目地址
+
+| 后端                                                                         | 前端                                                                       |
+|----------------------------------------------------------------------------|--------------------------------------------------------------------------|
+| [Github](https://github.com/pot-mot/jimmer-code-gen-kotlin)                | [Github](https://github.com/pot-mot/jimmer-code-gen-vue3)                |
+| [Gitee](https://gitee.com/run-around---whats-wrong/jimmer-code-gen-kotlin) | [Gitee](https://gitee.com/run-around---whats-wrong/jimmer-code-gen-vue3) |
 
 ## 功能预览
 
@@ -18,22 +25,11 @@
 ### 表设计
 ![table-edit.png](/images/project-preview/table-edit.png)
 
-
 ### 枚举编辑
 ![enum-edit.png](/images/project-preview/enum-edit.png)
 
 ### 预览下载
 ![code-preview.png](/images/project-preview/code-preview.png)
-
-## 项目地址
-
-### 前端
-- [Github 前端](https://github.com/pot-mot/jimmer-code-gen-vue3)
-- [Gitee 前端](https://gitee.com/run-around---whats-wrong/jimmer-code-gen-vue3)
-
-### 后端
-- [Github 后端](https://github.com/pot-mot/jimmer-code-gen-kotlin)
-- [Gitee 后端](https://gitee.com/run-around---whats-wrong/jimmer-code-gen-kotlin)
 
 ## 依赖说明
 
@@ -43,7 +39,6 @@
 
 后端
 - [SchemaCrawler](https://www.schemacrawler.com/)：数据库元数据的统一获取。
-- （目前尚未正式使用）[Liquibase](https://www.liquibase.org/)：逆向模型为 sql。
 
 前端
 - [AntV/X6](https://x6.antv.antgroup.com/)：图可视化操作。

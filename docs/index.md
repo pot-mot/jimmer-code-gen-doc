@@ -11,7 +11,7 @@ hero:
   actions:
     - theme: brand
       text: Get Started
-      link: /introduce/index.html
+      link: /start/introduce.html
     - theme: alt
       text: View on GitHub
       link: https://github.com/pot-mot/jimmer-code-gen-kotlin

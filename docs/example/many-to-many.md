@@ -10,7 +10,7 @@
 
 （当有额外存储需要，例如变更时间时，则必须要显式创建中间表并创建两条 ManyToOne 关联。更多内容请参考 Jimmer 的 [ManyToManyView](https://babyfish-ct.gitee.io/jimmer-doc/docs/mapping/advanced/view/many-to-many-view/) 这个功能）
 
-> 可直接复制 data.json 至模型设计器中。
+> 可直接复制 copy-data.json 至模型设计器中。
 
 ## 厂家与产品
 
@@ -19,7 +19,7 @@
 ![factory-to-product.png](/images/many-to-many/factory-to-product.png)
 
 <details>
-    <summary>data.json</summary>
+    <summary>copy-data.json</summary>
 
 ```json
 {

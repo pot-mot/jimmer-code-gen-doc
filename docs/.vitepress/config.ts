@@ -43,22 +43,39 @@ export default defineConfig({
         sidebar: [
             {
                 text: '简介',
-                link: '/introduce/index.html'
+                link: '/start/introduce.html'
             },
             {
                 text: '快速开始',
-                link: '/quick-start/index.html',
+                link: '/start/quick-start.html',
             },
             {
                 text: '源码启动',
-                link: '/source-start/index.html',
+                link: '/start/source-start.html',
             },
             {
                 text: '生成配置',
-                link: '/config/index.html',
+                link: '/start/config.html',
             },
             {
-                text: '生成演示',
+                text: '功能',
+                items: [
+                    {
+                        text: '表继承',
+                        link: '/feature/table-inherit.html',
+                    },
+                    {
+                        text: '复制黏贴',
+                        link: '/feature/copy-and-paste.html',
+                    },
+                    {
+                        text: '列默认',
+                        link: '/feature/column-default.html',
+                    }
+                ]
+            },
+            {
+                text: '示例',
                 items: [
                     {
                         text: '一对多 / 多对一',
@@ -83,8 +100,8 @@ export default defineConfig({
                         link: '/frontend/graph.html'
                     },
                     {
-                        text: '操作历史',
-                        link: '/frontend/log.html'
+                        text: 'Debug 与消息反馈',
+                        link: '/frontend/debug-and-message.html'
                     },
                 ]
             },

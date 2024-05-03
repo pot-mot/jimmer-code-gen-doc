@@ -28,7 +28,7 @@ GenEntityPropertiesView {
 }
 ```
 
-完整定义请参考 [DTO 文件](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/main/src/main/dto/top/potmot/model/GenEntity.dto#L6)。
+完整定义请参考 [DTO 文件](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/main/src/main/dto/top/potmot/core/GenEntity.dto)。
 
 与 TableAssociationsView 一样，这里具有全部用于生成实体与枚举的信息。
 
@@ -42,11 +42,3 @@ GenEntityPropertiesView {
 - 转换 Table -> Entity，得到基本的实体。具体详见 [TableEntityConvert](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/main/src/main/kotlin/top/potmot/core/entity/convert/TableEntityConvert.kt)。
 - 转换一般的 Column -> Property，得到基本的属性。具体详见 [BasePropertyConvert](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/main/src/main/kotlin/top/potmot/core/entity/convert/BasePropertyConvert.kt)。
 - 基于 Association 等额外信息，将 BaseProperty 转换为 AssociationProperty、IdView。具体详见 [AssociationPropertyConvert](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/main/src/main/kotlin/top/potmot/core/entity/convert/AssociationPropertyConvert.kt)。
-
-## Service 和 Controller
-
-目前项目并不提供 Service 和 Controller 的生成，且短期内不会去实现。
-
-因为强业务相关的这些部分在不同项目基础和需求下会有很大的差异性，由模型设计器提供相对鸡肋，使用价值不高。
-
-所以这一块如有生成的需要，请按照项目实际需要自行补充。

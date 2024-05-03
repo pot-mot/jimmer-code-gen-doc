@@ -14,7 +14,7 @@
 
 此时只需要在 [build.gradle.kts](https://github.com/pot-mot/jimmer-code-gen-kotlin/blob/main/build.gradle.kts) 补充对应的 us.fatehi:schemacrawler-[ ] 依赖即可。
 
-如果数据源不被 SchemaCrawler 支持则需要自行使用 JDBC 从目标数据源获取元数据并拼凑保存 Table、Association 等信息。
+如果数据源不被 SchemaCrawler 支持，目前只能自行根据需要使用 JDBC 从目标数据源获取元数据并拼凑保存 Table、Association 等信息。
 
 ## 生成 TableDefine
 

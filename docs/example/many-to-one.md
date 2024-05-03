@@ -8,14 +8,14 @@
 
 下面就对多对一和一对多这对反转的关联进行简单的建模演示。
 
-> 可直接复制 data.json 至模型设计器中。
+> 可直接复制 copy-data.json 至模型设计器中。
 
 ## 订单与订单明细（多对一，子指向主）
 
 ![detail-to-order.png](/images/many-to-one/detail-to-order.png)
 
 <details>
-    <summary>data.json</summary>
+    <summary>copy-data.json</summary>
 
 ```json
 {
@@ -221,7 +221,7 @@ ALTER TABLE `order_detail`
 ![class-to-student.png](/images/many-to-one/class-to-student.png)
 
 <details>
-    <summary>data.json</summary>
+    <summary>copy-data.json</summary>
     
 ```json
 {
