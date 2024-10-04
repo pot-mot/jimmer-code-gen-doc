@@ -8,7 +8,7 @@
 
 当对中间表没有任何额外要求时，仅需要创建一条位于两个表主键列间的 ManyToMany 关联即可隐式的创建一张纯粹的中间表。
 
-（当有额外存储需要，例如变更时间时，则必须要显式创建中间表并创建两条 ManyToOne 关联。更多内容请参考 Jimmer 的 [ManyToManyView](https://babyfish-ct.gitee.io/jimmer-doc/docs/mapping/advanced/view/many-to-many-view/) 这个功能）
+（当有额外存储需要，例如变更时间时，则必须要显式创建中间表并创建两条 ManyToOne 关联。更多内容请参考 Jimmer 的 [ManyToManyView](https://babyfish-ct.github.io/jimmer-doc/zh/docs/mapping/advanced/view/many-to-many-view/) 这个功能）
 
 > 可直接复制 copy-data.json 至模型设计器中。
 

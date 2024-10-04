@@ -5,7 +5,6 @@
 ## 项目启动
 
 - [github](https://github.com/pot-mot/jimmer-code-gen-kotlin/releases)
-- [gitee](https://gitee.com/run-around---whats-wrong/jimmer-code-gen-kotlin/releases)
 
 前往 git 仓库 Releases 获取发行版 jar，使用  `java -jar <JAR>` 启动即可，之后从浏览器访问 `localhost:port` 即可，默认端口 8080。
 

@@ -4,18 +4,10 @@
 
 ## 克隆项目
 
-- github
 ```
 git clone https://github.com/pot-mot/jimmer-code-gen-vue3
 
 git clone https://github.com/pot-mot/jimmer-code-gen-kotlin
-```
-
-- gitee
-```
-git clone https://gitee.com/run-around---whats-wrong/jimmer-code-gen-vue3
-
-git clone https://gitee.com/run-around---whats-wrong/jimmer-code-gen-kotlin
 ```
 
 ## 依赖下载
